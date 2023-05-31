@@ -10,6 +10,16 @@
         Background="Transparent"
         Title="MusicPlatform" Height="450" Width="800" MouseLeftButtonDown="dragAWindow">
     <Border CornerRadius="25" Background="#141414">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
 
+        </Grid>
     </Border>
 </Window>

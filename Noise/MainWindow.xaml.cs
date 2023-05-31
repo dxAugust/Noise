@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Noise.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Noise.Client.ServerAPI;
 
 namespace Noise
 {
@@ -75,11 +78,30 @@ namespace Noise
             }
         }
 
-        public void authorizeUser(string login, string password)
+        public async void authorizeUser(string login, string password)
         {
             if (usernameBox.Text.Length > 3 || passwordBox.Password.Length > 3)
             {
+                var serverResponse = await ServerAPI.authUser(login, password);
 
+                if (serverResponse.statusCode == 200)
+                {
+                    Config.userInfo = JsonConvert.DeserializeObject<User>(serverResponse.response);
+
+                    var musicForm = new MusicPlatform();
+
+                    var location = this.PointToScreen(new Point(0, 0));
+                    musicForm.Left = location.X;
+                    musicForm.Top = location.Y;
+
+                    musicForm.Show();
+                    this.Close();
+                } else if (serverResponse.statusCode == 401)
+                {
+                    errorMessage.Text = (string)Application.Current.Resources["errorWrongPassword"];
+                } else if (serverResponse.statusCode == 404) {
+                    errorMessage.Text = (string)Application.Current.Resources["errorExistAccount"];
+                }
             } else {
                 errorMessage.Text = (string)Application.Current.Resources["errorEmptyValues"];
             }
@@ -90,8 +112,8 @@ namespace Noise
             var registerForm = new RegisterWindow();
 
             var location = this.PointToScreen(new Point(0, 0));
-            this.Left = location.X;
-            this.Top = location.Y - this.Height;
+            registerForm.Left = location.X;
+            registerForm.Top = location.Y;
 
             registerForm.Show();
             this.Close();

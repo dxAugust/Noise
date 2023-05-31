@@ -87,6 +87,11 @@ namespace Noise
         private void secondTimeText_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             var loginForm = new MainWindow();
+
+            var location = this.PointToScreen(new Point(0, 0));
+            loginForm.Left = location.X;
+            loginForm.Top = location.Y;
+
             loginForm.Show();
             this.Close();
         }
@@ -95,7 +100,7 @@ namespace Noise
         {
             if (usernameBox.Text.Length > 3 || passwordBox.Password.Length > 3)
             {
-
+                
             }
             else
             {

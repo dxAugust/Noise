@@ -9,5 +9,15 @@
 
     <v:String x:Key="remembermeLabelText">Remember me</v:String>
 
+    <!-- Login page errors -->
     <v:String x:Key="errorEmptyValues">Username and password can't be empty</v:String>
+    <v:String x:Key="errorWrongPassword">Wrong password</v:String>
+    <v:String x:Key="errorExistAccount">Account is not existing</v:String>
+    <!---->
+
+    <!-- Sign up page errors -->
+    <v:String x:Key="errorLoginMuch">Login should be less than 30 symbols</v:String>
+    <v:String x:Key="errorLoginLess">Login should be more than 3 symbols</v:String>
+    <v:String x:Key="errorLatinOnly">Only latin symbols and digits</v:String>
+    <!---->
 </ResourceDictionary>
