@@ -122,5 +122,10 @@ namespace Noise
         {
             authorizeUser(usernameBox.Text, passwordBox.Password);
         }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

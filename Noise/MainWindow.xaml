@@ -80,6 +80,17 @@
                     TextAlignment="Center"
                     >${ERROR MESSAGE}</TextBlock>
             </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <Button Click="Close_Click" Style="{StaticResource closeButton}">
+                    <Image 
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        Source="./Assets/close.png"
+                        Width="24"
+                        Height="24"
+                        />
+                </Button>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>
