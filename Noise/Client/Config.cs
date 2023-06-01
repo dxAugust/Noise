@@ -8,7 +8,7 @@ namespace Noise.Client
 {
     public class Config
     {
-        public static string apiURL = "http://localhost:8081/api/";
+        public static string apiURL = "http://localhost:3000/api/";
 
         public static User userInfo = null;
 

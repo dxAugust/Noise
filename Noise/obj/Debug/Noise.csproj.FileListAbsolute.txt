@@ -66,3 +66,27 @@ C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio
 C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\bin\Debug\Newtonsoft.Json.dll
 C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\bin\Debug\Newtonsoft.Json.xml
 C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.csproj.CopyComplete
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MainWindow.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MainWindow.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MusicPlatform.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\RegisterWindow.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\App.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise_MarkupCompile.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise_MarkupCompile.lref
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.exe
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.pdb
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Noise.exe.config
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Noise.exe
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Noise.pdb
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\App.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MusicPlatform.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\RegisterWindow.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.g.resources
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.Properties.Resources.resources
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.GenerateResource.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.CoreCompileInputs.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.CopyComplete

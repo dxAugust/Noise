@@ -89,7 +89,6 @@ namespace Noise
                     Config.userInfo = JsonConvert.DeserializeObject<User>(serverResponse.response);
 
                     var musicForm = new MusicPlatform();
-
                     var location = this.PointToScreen(new Point(0, 0));
                     musicForm.Left = location.X;
                     musicForm.Top = location.Y;

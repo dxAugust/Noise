@@ -133,5 +133,8 @@
     <Resource Include="Assets\lock.png" />
     <Resource Include="Assets\user-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

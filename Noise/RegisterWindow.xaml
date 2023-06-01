@@ -11,13 +11,17 @@
         Title="Noise" Height="400" Width="400" MouseLeftButtonDown="dragAWindow">
     <Border CornerRadius="25" Background="#141414">
         <Grid x:Name="MainContent" Margin="0 50 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,25" Grid.RowSpan="2">
                 <Label Content="{DynamicResource signInLabelText}" FontFamily="Segoe UI" FontSize="20" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <Border CornerRadius="5" BorderThickness="1" BorderBrush="#212121" Margin="10">
                     <DockPanel  
@@ -88,11 +92,20 @@
                     Text="{DynamicResource secondTimeText}"
                     PreviewMouseDown="secondTimeText_PreviewMouseDown"
                     />
-                
+
                 <TextBlock 
                     x:Name="errorMessage" FontWeight="Bold" Foreground="Red"
                     TextAlignment="Center"
                     >${ERROR MESSAGE}</TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <Image 
+                    RenderOptions.BitmapScalingMode="HighQuality"
+                    Source="./Assets/close.png"
+                    Width="28"
+                    Height="28"
+                    />
             </StackPanel>
         </Grid>
     </Border>

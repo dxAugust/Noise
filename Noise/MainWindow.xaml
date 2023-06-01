@@ -10,13 +10,18 @@
         Title="Noise" Height="400" Width="400" MouseLeftButtonDown="dragAWindow">
     <Border CornerRadius="25" Background="#141414">
         <Grid x:Name="MainContent" Margin="0 50 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
                 <Label Content="{DynamicResource loginLabelText}" FontFamily="Segoe UI" FontSize="20" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <Border CornerRadius="5" BorderThickness="1" BorderBrush="#212121" Margin="10">
                     <DockPanel  

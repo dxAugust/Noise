@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Noise.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -72,7 +73,7 @@ namespace Noise
         {
             if (e.Key == Key.Enter)
             {
-                registerUser(usernameBox.Text, passwordBox.Password);
+                registerUser(usernameBox.Text, emailBox.Text, passwordBox.Password);
             }
         }
 
@@ -96,11 +97,45 @@ namespace Noise
             this.Close();
         }
 
-        public void registerUser(string login, string password)
+        public async void registerUser(string login, string email, string password)
         {
-            if (usernameBox.Text.Length > 3 || passwordBox.Password.Length > 3)
+            if (usernameBox.Text.Length > 3 || emailBox.Text.Length > 5 || passwordBox.Password.Length > 3)
             {
-                
+                var serverResponse = await ServerAPI.registerUser(login, email, password);
+
+                if (serverResponse.statusCode == 200)
+                {
+                    var mainForm = new MainWindow();
+                    var location = this.PointToScreen(new Point(0, 0));
+                    mainForm.Left = location.X;
+                    mainForm.Top = location.Y;
+
+                    mainForm.errorMessage.Text = (string)Application.Current.Resources["successRegistration"];
+                    mainForm.errorMessage.Foreground = Brushes.Green;
+                    mainForm.errorMessage.Visibility = Visibility.Visible;
+
+                    mainForm.Show();
+                    this.Close();
+                }
+                else if (serverResponse.statusCode == 501)
+                {
+                    this.errorMessage.Text = (string)Application.Current.Resources["errorLoginMuch"];
+                    this.errorMessage.Visibility = Visibility.Visible;
+                }
+                else if (serverResponse.statusCode == 502)
+                {
+                    this.errorMessage.Text = (string)Application.Current.Resources["errorLoginLess"];
+                    this.errorMessage.Visibility = Visibility.Visible;
+                }
+                else if (serverResponse.statusCode == 503)
+                {
+                    this.errorMessage.Text = (string)Application.Current.Resources["errorLatinOnly"];
+                    this.errorMessage.Visibility = Visibility.Visible;
+                }
+                else if (serverResponse.statusCode == 504)
+                {
+                    this.errorMessage.Text = (string)Application.Current.Resources["errorOccupiedNick"];
+                }
             }
             else
             {
@@ -110,7 +145,12 @@ namespace Noise
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            registerUser(usernameBox.Text, passwordBox.Password);
+            registerUser(usernameBox.Text, emailBox.Text, passwordBox.Password);
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -15,9 +15,11 @@
     <v:String x:Key="errorExistAccount">Account is not existing</v:String>
     <!---->
 
-    <!-- Sign up page errors -->
+    <!-- Sign up page messages -->
     <v:String x:Key="errorLoginMuch">Login should be less than 30 symbols</v:String>
     <v:String x:Key="errorLoginLess">Login should be more than 3 symbols</v:String>
     <v:String x:Key="errorLatinOnly">Only latin symbols and digits</v:String>
+    <v:String x:Key="errorOccupiedNick">Nickname is occupied</v:String>
+    <v:String x:Key="successRegistration">Account was registered</v:String>
     <!---->
 </ResourceDictionary>
