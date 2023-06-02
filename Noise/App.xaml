@@ -18,7 +18,8 @@
                             Name="buttonBorder"    
                             CornerRadius="10"
                             Background="#FFFFFF"
-                            BorderThickness="1">
+                            BorderThickness="1"
+                            ClipToBounds="True">
                                 <ContentPresenter
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
@@ -42,6 +43,7 @@
                             <Border 
                             Name="buttonBorder"    
                             Background="Transparent"
+                            ClipToBounds="True"
                             CornerRadius="0 25 0 0"
                             >
                                 <ContentPresenter

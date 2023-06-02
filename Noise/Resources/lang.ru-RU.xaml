@@ -3,6 +3,23 @@
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
     <v:String x:Key="loginLabelText">Авторизация</v:String>
+    <v:String x:Key="signInLabelText">Регистрация</v:String>
+    <v:String x:Key="firstTimeText">Впервые? Зарегистрироваться</v:String>
+    <v:String x:Key="secondTimeText">Уже есть аккаунт?</v:String>
 
-    <v:String x:Key="errorEmptyValues">Логин или пароль не должны быть пустыми</v:String>
+    <v:String x:Key="remembermeLabelText">Запомнить меня</v:String>
+
+    <!-- Login page errors -->
+    <v:String x:Key="errorEmptyValues">Логин и пароль не могут быть пустыми</v:String>
+    <v:String x:Key="errorWrongPassword">Неверный пароль</v:String>
+    <v:String x:Key="errorExistAccount">Аккаунт не существует</v:String>
+    <!---->
+
+    <!-- Sign up page messages -->
+    <v:String x:Key="errorLoginMuch">Логин не может быть больше 30 символов</v:String>
+    <v:String x:Key="errorLoginLess">Логин не может быть меньше 3-х символов</v:String>
+    <v:String x:Key="errorLatinOnly">Только латинские буквы и символы</v:String>
+    <v:String x:Key="errorOccupiedNick">Логин занят</v:String>
+    <v:String x:Key="successRegistration">Аккаунт успешно зарегистрирован</v:String>
+    <!---->
 </ResourceDictionary>

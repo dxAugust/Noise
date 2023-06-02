@@ -58,9 +58,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Client\Album.cs" />
+    <Compile Include="Client\Artist.cs" />
     <Compile Include="Client\Config.cs" />
+    <Compile Include="Client\Playlist.cs" />
     <Compile Include="Client\ServerAPI.cs" />
     <Compile Include="Client\ServerError.cs" />
+    <Compile Include="Client\Song.cs" />
     <Compile Include="Client\User.cs" />
     <Compile Include="MusicPlatform.xaml.cs">
       <DependentUpon>MusicPlatform.xaml</DependentUpon>

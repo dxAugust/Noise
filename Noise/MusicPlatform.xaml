@@ -9,8 +9,16 @@
         AllowsTransparency="True"
         Background="Transparent"
         ResizeMode="CanResizeWithGrip"
-        Title="MusicPlatform" MinHeight="450" MinWidth="600" Width="600" Height="450" MouseLeftButtonDown="dragAWindow">
-    <Border CornerRadius="25" VerticalAlignment="Stretch" Background="#141414">
+        Title="MusicPlatform" 
+        MinHeight="600" 
+        MinWidth="1000" 
+        Width="1000" 
+        Height="600" 
+        MouseLeftButtonDown="dragAWindow">
+    <Border CornerRadius="25" 
+            VerticalAlignment="Stretch" 
+            Background="#141414"
+            x:Name="windowBorder">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -19,9 +27,62 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="6*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
+            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Button Click="Close_Click" 
+                        Style="{StaticResource closeButton}"
+                        Padding="20 20 50 20"
+                        HorizontalAlignment="Center"
+                        x:Name="closeButton">
+                    <Image 
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        Source="./Assets/close.png"
+                        Width="24"
+                        Height="24"
+                        />
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Center"
+                        Grid.Column="2" Grid.RowSpan="2">
+                <Border 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    CornerRadius="10"
+                    Margin="20"
+                    Padding="40 9">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left">
+                        <Border MinWidth="64" 
+                            MinHeight="64" 
+                            CornerRadius="15">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="C:\Users\detro\Downloads\1.png"/>
+                            </Border.Background>
+                        </Border>
+
+                        <Label
+                            FontFamily="Segoe UI" FontSize="18px" 
+                            Foreground="White" 
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            x:Name="profileName">USERNAME</Label>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <Border ClipToBounds="True" 
+                        Background="#181818" 
+                        Grid.Row="2" Grid.ColumnSpan="3"
+                    x:Name="songPlayer"
+                    CornerRadius="0 0 25 25">
+                
+            </Border>
         </Grid>
     </Border>
 </Window>

@@ -12,5 +12,6 @@ namespace Noise.Client
 
         public static User userInfo = null;
 
+        public static Song currentPlaying = null;
     }
 }
