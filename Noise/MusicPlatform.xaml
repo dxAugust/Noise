@@ -8,12 +8,14 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Title="MusicPlatform" Height="450" Width="800" MouseLeftButtonDown="dragAWindow">
-    <Border CornerRadius="25" Background="#141414">
+        ResizeMode="CanResizeWithGrip"
+        Title="MusicPlatform" MinHeight="450" MinWidth="600" Width="600" Height="450" MouseLeftButtonDown="dragAWindow">
+    <Border CornerRadius="25" VerticalAlignment="Stretch" Background="#141414">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>

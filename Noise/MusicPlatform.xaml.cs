@@ -34,6 +34,19 @@ namespace Noise
             {
 
             }
+
+            if (e.ClickCount == 2)
+            {
+                if (this.WindowState == WindowState.Normal)
+                {
+                    this.WindowState = WindowState.Maximized;
+                    this.Width = SystemParameters.WorkArea.Width;
+                    this.Height = SystemParameters.WorkArea.Height;
+                } else
+                {
+                    this.WindowState = WindowState.Normal;
+                }
+            }
         }
     }
 }
