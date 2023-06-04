@@ -25,10 +25,34 @@ namespace Noise
     {
         public bool isMaximasized = false;
         public CornerRadius closeButtonRadius;
+
+        
+
         public MusicPlatform()
         {
             InitializeComponent();
             profileName.Content = Config.userInfo.login;
+
+            double time = 2;
+            var opacity = new DoubleAnimation
+            {
+                From = 0.0,
+                To = 1.0,
+                Duration = new Duration(TimeSpan.FromSeconds(time)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+            };
+
+            var posY = new ThicknessAnimation
+            {
+                From = new Thickness(0, 40, 0, 0),
+                To = new Thickness(0, 0, 0, 0),
+                Duration = new Duration(TimeSpan.FromSeconds(time)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+            };
+
+            profilePanel.BeginAnimation(UIElement.OpacityProperty, opacity);
+            Timeline.SetDesiredFrameRate(posY, 60);
+            profilePanel.BeginAnimation(Grid.MarginProperty, posY);
         }
 
         private void dragAWindow(object sender, MouseButtonEventArgs e)
@@ -65,10 +89,12 @@ namespace Noise
                     };
 
                     this.BeginAnimation(Window.WidthProperty, sizeAnimationWidth);
+                    Timeline.SetDesiredFrameRate(sizeAnimationHeight, 60);
                     this.BeginAnimation(Window.HeightProperty, sizeAnimationHeight);
 
                     windowBorder.CornerRadius = new CornerRadius(0);
                     songPlayer.CornerRadius = new CornerRadius(0);
+                    programMenu.CornerRadius = new CornerRadius(0, 0, 0, 0);
 
                     this.Left = 0;
                     this.Top = 0;
@@ -83,6 +109,7 @@ namespace Noise
 
                     windowBorder.CornerRadius = new CornerRadius(25);
                     songPlayer.CornerRadius = new CornerRadius(0, 0, 25, 25);
+                    programMenu.CornerRadius = new CornerRadius(25, 0, 0, 0);
 
                     isMaximasized = false;
                 }
@@ -92,20 +119,6 @@ namespace Noise
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            if (isMaximasized)
-            {
-               if (Mouse.Capture((IInputElement)sender))
-               {
-                    windowBorder.CornerRadius = new CornerRadius(25);
-                    songPlayer.CornerRadius = new CornerRadius(0, 0, 25, 25);
-
-                    isMaximasized = false;
-               }
-            }
         }
     }
 }

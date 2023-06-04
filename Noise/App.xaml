@@ -62,6 +62,11 @@
                 </Setter>
             </Style>
 
+            <Style x:Key="playingSlider"
+                   TargetType="Track">
+                
+            </Style>
+            
             <Style TargetType="CheckBox">
                 <Setter Property="SnapsToDevicePixels" Value="true" />
                 <Setter Property="OverridesDefaultStyle" Value="true" />

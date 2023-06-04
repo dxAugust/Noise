@@ -22,4 +22,6 @@
     <v:String x:Key="errorOccupiedNick">Nickname is occupied</v:String>
     <v:String x:Key="successRegistration">Account was registered</v:String>
     <!---->
+
+    <v:String x:Key="splashMessage">Discover something new</v:String>
 </ResourceDictionary>

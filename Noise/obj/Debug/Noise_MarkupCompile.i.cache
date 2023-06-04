@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-J:\Files\GitHub\Noise\Noise\obj\Debug\
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\
 Noise
 none
 false
 DEBUG;TRACE
-J:\Files\GitHub\Noise\Noise\App.xaml
-41064398814
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\App.xaml
+41786071148
 
-161667566886
-24873674103
+161048591198
+24258897045
 MainWindow.xaml;MusicPlatform.xaml;Resources\lang.ru-RU.xaml;RegisterWindow.xaml;
 
 True

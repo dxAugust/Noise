@@ -23,7 +23,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
-                <Label Content="{DynamicResource loginLabelText}" FontFamily="Segoe UI" FontSize="20" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
+                <Label Content="{DynamicResource loginLabelText}" TextOptions.TextRenderingMode="ClearType" FontFamily="Segoe UI" FontSize="20" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <Border CornerRadius="5" BorderThickness="1" BorderBrush="#212121" Margin="10">
                     <DockPanel  
                         Background="#212121">
