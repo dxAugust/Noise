@@ -8,7 +8,8 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Title="Noise" Height="400" Width="400" MouseLeftButtonDown="dragAWindow">
+        Title="Noise" Height="400" Width="400" MouseLeftButtonDown="dragAWindow"
+        WindowStartupLocation="CenterScreen">
     <Border CornerRadius="25" Background="#141414">
         <Grid x:Name="MainContent" Margin="0 50 0 0">
             <Grid.RowDefinitions>

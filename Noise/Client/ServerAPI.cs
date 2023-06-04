@@ -40,6 +40,26 @@ namespace Noise.Client
             return serverResponse;
         }
 
+        public static async Task<ServerResponse> authUserByToken(string token)
+        {
+            var userData = new Dictionary<string, string>
+            {
+                { "session_token", token },
+            };
+
+            var data = new FormUrlEncodedContent(userData);
+            var response = await client.PostAsync(Config.apiURL + "user/authorize", data);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
         public static async Task<ServerResponse> registerUser(string username, string email, string password)
         {
             var userData = new Dictionary<string, string>

@@ -7,7 +7,8 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Title="Noise" Height="400" Width="400" MouseLeftButtonDown="dragAWindow">
+        Title="Noise" Height="400" Width="400" MouseLeftButtonDown="dragAWindow"
+        WindowStartupLocation="CenterScreen">
     <Border CornerRadius="25" Background="#141414">
         <Grid x:Name="MainContent" Margin="0 50 0 0">
             <Grid.RowDefinitions>
@@ -62,7 +63,7 @@
                     </DockPanel>
                 </Border>
 
-                <CheckBox IsChecked="True" Content="{DynamicResource remembermeLabelText}" />
+                <CheckBox x:Name="rememberButton" IsChecked="True" Content="{DynamicResource remembermeLabelText}" />
 
                 <Border CornerRadius="5" BorderThickness="1" BorderBrush="#212121" Margin="60 10 60 10">
                     <Button Padding="10" Foreground="#000000" FontWeight="Bold" Content="{DynamicResource loginLabelText}" Click="Login_Click"/>

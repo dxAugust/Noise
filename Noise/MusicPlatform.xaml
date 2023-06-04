@@ -14,7 +14,9 @@
         MinWidth="1000" 
         Width="1000" 
         Height="600" 
-        MouseLeftButtonDown="dragAWindow">
+        MouseLeftButtonDown="dragAWindow"
+        SizeChanged="Window_SizeChanged"
+        WindowStartupLocation="CenterScreen">
     <Border CornerRadius="25" 
             VerticalAlignment="Stretch" 
             Background="#141414"
@@ -23,10 +25,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.7*"/>
                 <RowDefinition Height="7*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
@@ -34,7 +36,7 @@
             <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
                 <Button Click="Close_Click" 
                         Style="{StaticResource closeButton}"
-                        Padding="20 20 50 20"
+                        Padding="10 10 40 10"
                         HorizontalAlignment="Center"
                         x:Name="closeButton">
                     <Image 
@@ -48,26 +50,26 @@
 
             <StackPanel Grid.Row="1" 
                         VerticalAlignment="Top" 
-                        HorizontalAlignment="Center"
+                        HorizontalAlignment="Right"
                         Grid.Column="2" Grid.RowSpan="2">
                 <Border 
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     CornerRadius="10"
                     Margin="20"
                     Padding="40 9">
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Left">
-                        <Border MinWidth="64" 
-                            MinHeight="64" 
+                        <Border Width="50" 
+                            Height="50" 
                             CornerRadius="15">
                             <Border.Background>
-                                <ImageBrush Stretch="Fill" ImageSource="C:\Users\detro\Downloads\1.png"/>
+                                <ImageBrush Stretch="Fill" ImageSource="./Assets/testAvatar.jpg"/>
                             </Border.Background>
                         </Border>
 
                         <Label
-                            FontFamily="Segoe UI" FontSize="18px" 
+                            FontFamily="Segoe UI" FontSize="16px" 
                             Foreground="White" 
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
@@ -77,7 +79,7 @@
             </StackPanel>
 
             <Border ClipToBounds="True" 
-                        Background="#181818" 
+                        Background="#202020" 
                         Grid.Row="2" Grid.ColumnSpan="3"
                     x:Name="songPlayer"
                     CornerRadius="0 0 25 25">

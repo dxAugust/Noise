@@ -73,9 +73,6 @@ namespace Noise
                     this.Left = 0;
                     this.Top = 0;
 
-                    //this.Left = (SystemParameters.WorkArea.Width / 2) - (this.Width / 2);
-                    //this.Top = (SystemParameters.WorkArea.Height / 2) - (this.Height / 2);
-
                     isMaximasized = true;
                 } else {
                     this.Width = 800;
@@ -95,6 +92,20 @@ namespace Noise
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (isMaximasized)
+            {
+               if (Mouse.Capture((IInputElement)sender))
+               {
+                    windowBorder.CornerRadius = new CornerRadius(25);
+                    songPlayer.CornerRadius = new CornerRadius(0, 0, 25, 25);
+
+                    isMaximasized = false;
+               }
+            }
         }
     }
 }
