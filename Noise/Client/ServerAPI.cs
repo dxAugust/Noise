@@ -81,5 +81,33 @@ namespace Noise.Client
 
             return serverResponse;
         }
+
+        public static async Task<ServerResponse> fetchAllSongs()
+        {
+            var response = await client.GetAsync(Config.apiURL + "songs/fetch/all");
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
+        public static async Task<ServerResponse> fetchSongById(int songId)
+        {
+            var response = await client.GetAsync(Config.apiURL + "songs/fetch/" + songId);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
     }
 }

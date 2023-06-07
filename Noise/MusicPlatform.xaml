@@ -138,17 +138,49 @@
                         </WrapPanel>
                     <WrapPanel 
                             HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                        <Label
-                            Foreground="White">
-                           SDGHGSDGDSGSGDH
-                        </Label>
+                            VerticalAlignment="Center"
+                            Orientation="Vertical">
+                        <WrapPanel>
+                            <Slider 
+                                Width="500"
+                                Foreground="Wheat"/>
+                            <TextBlock 
+                                VerticalAlignment="Center"
+                                FontSize="16px"
+                                Foreground="White">
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}{0:00}:{1:00;00}">
+                                        <Binding Path="Duration.Minutes"/>
+                                        <Binding Path="Duration.Seconds"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </WrapPanel>
+                            
+                        <Button 
+                            Width="32" 
+                            Height="32" 
+                            Style="{DynamicResource roundButton}">
+                            <Image
+                                RenderOptions.BitmapScalingMode="HighQuality"
+                                Width="16"
+                                Height="16"
+                                Source="./Assets/Play.png"/>
+                        </Button>
                     </WrapPanel>
 
                     <WrapPanel
                             HorizontalAlignment="Right"
-                            VerticalAlignment="Center">
-                        <Label Foreground="White">VOLUME HERE</Label>
+                            VerticalAlignment="Top"
+                            Orientation="Vertical">
+                        <Slider 
+                                MinWidth="150"
+                                Foreground="Wheat"
+                                Minimum="0"
+                                Maximum="100"/>
+                        <TextBlock Foreground="White" 
+                                   TextAlignment="Center"
+                                   FontSize="16px">100%</TextBlock>
                     </WrapPanel>
                 </Grid>
             </Border>
@@ -158,9 +190,35 @@
                           Grid.ColumnSpan="2"
                           HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
-                <StackPanel>
-                    
-                </StackPanel>
+                <WrapPanel
+                    Margin="20"
+                    x:Name="songsList"
+                    Orientation="Horizontal">
+                    <WrapPanel
+                        Width="150"
+                        Height="250"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Center">
+                        <Border 
+                                Width="150"
+                                Height="150"
+                                CornerRadius="10">
+                            <Border.Background>
+                                <ImageBrush 
+                                        RenderOptions.BitmapScalingMode="HighQuality"
+                                        Stretch="Fill"
+                                        ImageSource="./Assets/testThumnb.png"/>
+                            </Border.Background>
+                        </Border>
+                        <Label
+                            Foreground="White"
+                            FontWeight="Bold"
+                            FontSize="20px">SongName</Label>
+                        <Label
+                            Foreground="#9F9F9F"
+                            FontSize="14px">ArtistName</Label>
+                    </WrapPanel>
+                </WrapPanel>
             </ScrollViewer>
         </Grid>
     </Border>

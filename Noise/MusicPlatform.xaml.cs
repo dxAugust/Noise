@@ -26,11 +26,10 @@ namespace Noise
         public bool isMaximasized = false;
         public CornerRadius closeButtonRadius;
 
-        
-
         public MusicPlatform()
         {
             InitializeComponent();
+
             profileName.Content = Config.userInfo.login;
 
             double time = 2;
@@ -51,8 +50,12 @@ namespace Noise
             };
 
             profilePanel.BeginAnimation(UIElement.OpacityProperty, opacity);
-            Timeline.SetDesiredFrameRate(posY, 60);
+            Timeline.SetDesiredFrameRate(posY, 140);
+            Timeline.SetDesiredFrameRate(opacity, 140);
             profilePanel.BeginAnimation(Grid.MarginProperty, posY);
+
+            songsList.BeginAnimation(UIElement.OpacityProperty, opacity);
+            songsList.BeginAnimation(StackPanel.MarginProperty, posY);
         }
 
         private void dragAWindow(object sender, MouseButtonEventArgs e)

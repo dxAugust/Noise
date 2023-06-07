@@ -93,6 +93,7 @@
     <Compile Include="Client\ServerAPI.cs" />
     <Compile Include="Client\ServerError.cs" />
     <Compile Include="Client\Song.cs" />
+    <Compile Include="Client\Songs.cs" />
     <Compile Include="Client\User.cs" />
     <Compile Include="MusicPlatform.xaml.cs">
       <DependentUpon>MusicPlatform.xaml</DependentUpon>
@@ -173,6 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\music_no_thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\testThumnb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
