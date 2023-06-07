@@ -93,14 +93,20 @@
     <Compile Include="Client\ServerAPI.cs" />
     <Compile Include="Client\ServerError.cs" />
     <Compile Include="Client\Song.cs" />
-    <Compile Include="Client\Songs.cs" />
     <Compile Include="Client\User.cs" />
+    <Compile Include="MainPages\DiscoverSongs.xaml.cs">
+      <DependentUpon>DiscoverSongs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MusicPlatform.xaml.cs">
       <DependentUpon>MusicPlatform.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="MainPages\DiscoverSongs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -53,9 +53,6 @@ namespace Noise
             Timeline.SetDesiredFrameRate(posY, 140);
             Timeline.SetDesiredFrameRate(opacity, 140);
             profilePanel.BeginAnimation(Grid.MarginProperty, posY);
-
-            songsList.BeginAnimation(UIElement.OpacityProperty, opacity);
-            songsList.BeginAnimation(StackPanel.MarginProperty, posY);
         }
 
         private void dragAWindow(object sender, MouseButtonEventArgs e)

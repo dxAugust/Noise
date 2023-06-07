@@ -190,35 +190,7 @@
                           Grid.ColumnSpan="2"
                           HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
-                <WrapPanel
-                    Margin="20"
-                    x:Name="songsList"
-                    Orientation="Horizontal">
-                    <WrapPanel
-                        Width="150"
-                        Height="250"
-                        Orientation="Vertical"
-                        HorizontalAlignment="Center">
-                        <Border 
-                                Width="150"
-                                Height="150"
-                                CornerRadius="10">
-                            <Border.Background>
-                                <ImageBrush 
-                                        RenderOptions.BitmapScalingMode="HighQuality"
-                                        Stretch="Fill"
-                                        ImageSource="./Assets/testThumnb.png"/>
-                            </Border.Background>
-                        </Border>
-                        <Label
-                            Foreground="White"
-                            FontWeight="Bold"
-                            FontSize="20px">SongName</Label>
-                        <Label
-                            Foreground="#9F9F9F"
-                            FontSize="14px">ArtistName</Label>
-                    </WrapPanel>
-                </WrapPanel>
+                <Frame Source="MainPages/DiscoverSongs.xaml"/>
             </ScrollViewer>
         </Grid>
     </Border>

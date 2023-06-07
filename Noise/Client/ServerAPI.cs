@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +100,20 @@ namespace Noise.Client
         public static async Task<ServerResponse> fetchSongById(int songId)
         {
             var response = await client.GetAsync(Config.apiURL + "songs/fetch/" + songId);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
+        public static async Task<ServerResponse> uploadSong()
+        {
+            var response = await client.GetAsync(Config.apiURL + "songs/upload/");
             var responseString = await response.Content.ReadAsStringAsync();
 
             ServerResponse serverResponse = new ServerResponse()
