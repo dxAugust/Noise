@@ -21,6 +21,7 @@ namespace Noise.Client
         }
 
         private static readonly HttpClient client = new HttpClient();
+        private static readonly HttpClient httpClient = new HttpClient();
         public static async Task<ServerResponse> authUser(string username, string password)
         {            
             var userData = new Dictionary<string, string>

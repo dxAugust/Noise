@@ -13,7 +13,7 @@ namespace Noise.Client
         public string name { get; set; }
         public string path { get; set; }
         public string thumbnail_path { get; set; }
-        public int publication_date { get; set;  }
+        public Int64 publication_date { get; set;  }
         public string genre { get; set; }
         public int plays { get; set; }
         public int length { get; set; }

@@ -132,10 +132,12 @@
                                 Orientation="Vertical">
                                 <Label
                                     Foreground="White"
-                                    FontSize="20px">SongName</Label>
+                                    FontSize="20px"
+                                    x:Name="currentPlayingSongName">SongName</Label>
                                 <Label
                                     Foreground="#404040"
-                                    FontSize="14px">ArtistName</Label>
+                                    FontSize="14px"
+                                    x:Name="currentPlayingArtistName">ArtistName</Label>
                             </WrapPanel>
                         </WrapPanel>
                     <WrapPanel 
@@ -159,10 +161,10 @@
                             </TextBlock>
                         </WrapPanel>
                             
-                        <Button 
+                        <Button
                             Width="32" 
                             Height="32" 
-                            Style="{DynamicResource roundButton}">
+                            Style="{DynamicResource roundButton}" Click="PlayButton_Click">
                             <Image
                                 RenderOptions.BitmapScalingMode="HighQuality"
                                 Width="16"
@@ -178,11 +180,15 @@
                         <Slider 
                                 MinWidth="150"
                                 Foreground="Wheat"
+                                x:Name="volumeSlider"
                                 Minimum="0"
-                                Maximum="100"/>
-                        <TextBlock Foreground="White" 
-                                   TextAlignment="Center"
-                                   FontSize="16px">100%</TextBlock>
+                                Maximum="100"
+                                ValueChanged="volumeSlider_ValueChanged"/>
+                        <Label Foreground="White" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="16px"
+                                   x:Name="currentVolume"
+                                   Content="0%"/>
                     </WrapPanel>
                 </Grid>
             </Border>
@@ -192,7 +198,9 @@
                           Grid.ColumnSpan="2"
                           HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
-                <Frame Source="MainPages/DiscoverSongs.xaml"/>
+                <Frame 
+                    x:Name="mainScreen"
+                    Source="MainPages/DiscoverSongs.xaml"/>
             </ScrollViewer>
         </Grid>
     </Border>

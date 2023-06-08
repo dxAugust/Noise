@@ -20,6 +20,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using WpfAnimatedGif;
 using static Noise.Client.ServerAPI;
 
 namespace Noise.MainPages
@@ -70,7 +71,7 @@ namespace Noise.MainPages
 
                     if (song["thumbnail_path"].ToString().Length != 0)
                     {
-                        thumbURI = new Uri(song["thumbnail_path"].ToString());
+                        thumbURI = new Uri(Config.serverURL + "/" + song["thumbnail_path"].ToString(), UriKind.RelativeOrAbsolute);
                     }
                     BitmapImage thumbnailImage = new BitmapImage(thumbURI);
 
@@ -170,7 +171,7 @@ namespace Noise.MainPages
 
                     songPanel.AddHandler(WrapPanel.MouseEnterEvent, new RoutedEventHandler(songPanel_Hover));
                     songPanel.AddHandler(WrapPanel.MouseLeaveEvent, new RoutedEventHandler(songPanel_UnHover));
-                    thumbnailBorder.AddHandler(Border.MouseDownEvent, new RoutedEventHandler(playSong_Click));
+                    songPanel.AddHandler(WrapPanel.MouseDownEvent, new RoutedEventHandler(playSong_Click));
 
                     playImage.AddHandler(Image.MouseEnterEvent, new RoutedEventHandler(playImage_Hover));
                     playImage.AddHandler(Image.MouseLeaveEvent, new RoutedEventHandler(playImage_UnHover));
@@ -188,9 +189,11 @@ namespace Noise.MainPages
             }
         }
 
+        public event EventHandler playingNewSong;
         void playSong_Click(object sender, RoutedEventArgs e)
         {
-            Border playSong = (Border)sender;
+            WrapPanel playSong = (WrapPanel)sender;
+            playingNewSong(sender, e);
         }
 
         void playImage_Hover(object sender, RoutedEventArgs e)
