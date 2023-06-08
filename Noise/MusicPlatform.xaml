@@ -51,7 +51,9 @@
             <StackPanel 
                 Grid.Column="1" 
                 Grid.Row="1"
-                VerticalAlignment="Center">
+                VerticalAlignment="Center"
+                Margin="-20 0 0 0"
+                x:Name="categoryTitle">
                 <Label
                     Margin="20 20 20 20"
                     Foreground="White"

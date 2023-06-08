@@ -182,10 +182,13 @@
     <Resource Include="Assets\music_no_thumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\testThumnb.png" />
+    <Resource Include="Assets\Play.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Play.png" />
+    <Resource Include="Assets\icon-plays.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

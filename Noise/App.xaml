@@ -61,6 +61,24 @@
                 </Setter>
             </Style>
 
+            <Style x:Key="transparentButton" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border 
+                            Name="buttonBorder"    
+                            Background="Transparent"
+                            BorderThickness="1">
+                                <ContentPresenter
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="{TemplateBinding Padding}" ></ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <Style x:Key="closeButton" TargetType="Button">
                 <Setter Property="Template">
                     <Setter.Value>

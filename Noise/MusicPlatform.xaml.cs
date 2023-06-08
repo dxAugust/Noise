@@ -43,7 +43,15 @@ namespace Noise
 
             var posY = new ThicknessAnimation
             {
-                From = new Thickness(0, 40, 0, 0),
+                From = new Thickness(40, 0, 0, 0),
+                To = new Thickness(0, 0, 0, 0),
+                Duration = new Duration(TimeSpan.FromSeconds(time)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+            };
+
+            var posX = new ThicknessAnimation
+            {
+                From = new Thickness(-20, 0, 0, 0),
                 To = new Thickness(0, 0, 0, 0),
                 Duration = new Duration(TimeSpan.FromSeconds(time)),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
@@ -52,7 +60,10 @@ namespace Noise
             profilePanel.BeginAnimation(UIElement.OpacityProperty, opacity);
             Timeline.SetDesiredFrameRate(posY, 140);
             Timeline.SetDesiredFrameRate(opacity, 140);
+            Timeline.SetDesiredFrameRate(posX, 140);
             profilePanel.BeginAnimation(Grid.MarginProperty, posY);
+            categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
+            categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
         }
 
         private void dragAWindow(object sender, MouseButtonEventArgs e)

@@ -13,7 +13,62 @@
                     Margin="20"
                     x:Name="songsList"
                     Orientation="Horizontal">
-            
+            <WrapPanel
+                        Width="150"
+                        Height="250"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        Margin="20">
+                <Border 
+                                Width="150"
+                                Height="150"
+                                CornerRadius="10">
+                    <WrapPanel HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Orientation="Vertical">
+                        <Button 
+                                Width="64" 
+                                Height="64" 
+                                Margin="0 20 0 0"
+                                Style="{DynamicResource transparentButton}">
+                            <Image
+                                    RenderOptions.BitmapScalingMode="HighQuality"
+                                    Width="48"
+                                    Height="48"
+                                    Source="/Assets/icon-play.png"
+                                    Margin="0 20 0 0"/>
+                        </Button>
+
+                        <Image 
+                            Margin="0 20 0 0"
+                            Width="20"
+                            Height="20"
+                            RenderOptions.BitmapScalingMode="HighQuality"
+                            Source="/Assets/icon-plays.png"
+                            VerticalAlignment="Bottom"/>
+                        <Label
+                            Foreground="#9F9F9F"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontSize="12px">1.2k</Label>
+
+                    </WrapPanel>
+
+                    <Border.Background>
+                        <ImageBrush 
+                                        RenderOptions.BitmapScalingMode="HighQuality"
+                                        Stretch="Fill"
+                                        ImageSource="/Assets/music_no_thumbnail.png"/>
+                    </Border.Background>
+                </Border>
+                <Label
+                            Foreground="White"
+                            FontWeight="Bold"
+                            FontSize="20px">SongName</Label>
+                <Label
+                            Foreground="#9F9F9F"
+                            FontSize="14px">ArtistName</Label>
+            </WrapPanel>
         </WrapPanel>
     </Grid>
 </Page>

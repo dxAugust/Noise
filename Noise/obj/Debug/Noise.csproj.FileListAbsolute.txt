@@ -177,3 +177,5 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.T
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.ValueTuple.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.g.cs
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.baml
