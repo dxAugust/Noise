@@ -24,4 +24,8 @@
     <!---->
 
     <v:String x:Key="splashMessage">Discover something new</v:String>
+
+    <!-- Menu items locale -->
+    <v:String x:Key="menuItem1">Home</v:String>
+    <!---->
 </ResourceDictionary>

@@ -96,12 +96,28 @@
                 </Border>
             </StackPanel>
 
-            <Border ClipToBounds="True" 
-                    Background="#171717" 
+            <Border 
+                    Background="#181818"
                     Grid.RowSpan="3" Grid.Column="0"
-                    x:Name="programMenu"
                     CornerRadius="25 0 0 0">
-
+                <StackPanel
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    x:Name="programMenu">
+                    <Button 
+                    Style="{DynamicResource menuItem}"
+                    Margin="10" Padding="10"
+                    Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" Width="28" Height="28" 
+                                   Source="/Assets/house-icon.png"/>
+                            <Label Content="{DynamicResource menuItem1}" 
+                                   FontSize="16px"
+                                   TextOptions.TextRenderingMode="ClearType"
+                                   Foreground="White"></Label>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
             </Border>
 
             <Border ClipToBounds="True" 
@@ -145,19 +161,26 @@
                             VerticalAlignment="Center"
                             Orientation="Vertical">
                         <WrapPanel>
-                            <Slider 
-                                Width="500"
-                                Foreground="Wheat"/>
                             <TextBlock 
                                 VerticalAlignment="Center"
                                 FontSize="16px"
-                                Foreground="White">
-                                <TextBlock.Text>
-                                    <MultiBinding StringFormat="{}{0:00}:{1:00;00}">
-                                        <Binding Path="Duration.Minutes"/>
-                                        <Binding Path="Duration.Seconds"/>
-                                    </MultiBinding>
-                                </TextBlock.Text>
+                                Foreground="White"
+                                x:Name="playerPosition">
+                                0:00
+                            </TextBlock>
+                            <Slider 
+                                Width="500"
+                                Foreground="White"
+                                x:Name="playerSlider"
+                                PreviewMouseLeftButtonDown="playerSlider_MouseLeftButtonDown"
+                                PreviewMouseLeftButtonUp="playerSlider_MouseLeftButtonUp"
+                                Margin="10 0 10 0"/>
+                            <TextBlock 
+                                VerticalAlignment="Center"
+                                FontSize="16px"
+                                Foreground="White"
+                                x:Name="playerMax">
+                                0:00
                             </TextBlock>
                         </WrapPanel>
                             
@@ -182,6 +205,7 @@
                                 Foreground="Wheat"
                                 x:Name="volumeSlider"
                                 Minimum="0"
+                                Value="0"
                                 Maximum="100"
                                 ValueChanged="volumeSlider_ValueChanged"/>
                         <Label Foreground="White" 

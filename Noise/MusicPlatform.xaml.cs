@@ -1,17 +1,22 @@
-﻿using NAudio.Utils;
+﻿using NAudio.Gui;
+using NAudio.Utils;
 using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Noise.Client;
 using Noise.MainPages;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Channels;
 using System.Security.Policy;
 using System.Text;
 using System.Text.Json.Nodes;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,9 +42,18 @@ namespace Noise
         Song currentPlayingSong;
 
         public DiscoverSongs discoverSongsPage;
-        WasapiOut musicPlayer = new WasapiOut();
+        public static WasapiOut musicPlayer = new WasapiOut();
+        public static MediaFoundationReader mf;
 
-        //System.Threading.Thread Thread = new System.Threading.Thread(new System.Threading.ThreadStart(OnSongPlaying)); 
+        public bool changingPosition = false;
+
+        public enum Pages : int
+        {
+            home = 0,
+            studio = 1,
+        }
+
+        Thread thread;
 
         public MusicPlatform()
         {
@@ -85,8 +99,6 @@ namespace Noise
             categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
         }
 
-
-
         private async void playSongByIdAsync(object sender, EventArgs e)
         {
             WrapPanel songPanel = (WrapPanel)sender;
@@ -104,15 +116,32 @@ namespace Noise
             BitmapImage thumbnailImage = new BitmapImage(thumbURI);
             currentPlayingThumb.ImageSource = thumbnailImage;
 
-            using (var mf = new MediaFoundationReader(Config.serverURL + "/" + currentPlayingSong.path))
+            using (mf = new MediaFoundationReader(Config.serverURL + "/" + currentPlayingSong.path))
             {
                 musicPlayer.Volume = (float)((volumeSlider.Value / 10) / 10);
-                //Thread.Start();
+
+                this.playerSlider.Maximum = mf.TotalTime.TotalSeconds;
+
+                thread = new Thread(OnSongPlaying);
+                thread.Start();
 
                 Console.WriteLine(mf.TotalTime.TotalSeconds);
 
-                musicPlayer.Init(mf);
-                musicPlayer.Play();
+                string maxLength = string.Format("{0:D2}:{1:D2}",
+                mf.TotalTime.Minutes,
+                mf.TotalTime.Seconds);
+
+                this.playerMax.Text = maxLength;
+
+                try
+                {
+                    musicPlayer.Stop();
+                    musicPlayer.Init(mf);
+                    musicPlayer.Play();
+                } catch
+                {
+
+                }
             }
         }
 
@@ -120,12 +149,32 @@ namespace Noise
         {
             while (true)
             {
-                if (this.musicPlayer.PlaybackState == PlaybackState.Playing)
-                { 
-                    Console.WriteLine(musicPlayer.GetPositionTimeSpan().TotalSeconds);
+                if (musicPlayer.PlaybackState == PlaybackState.Playing)
+                {
+                    try
+                    {
+                        Dispatcher.Invoke((Action)(() =>
+                        {
+                            if (!changingPosition)
+                            {
+                                TimeSpan posTimeSpan = musicPlayer.GetPositionTimeSpan();
+
+                                string currentPositon = string.Format("{0:D2}:{1:D2}",
+                                posTimeSpan.Minutes,
+                                posTimeSpan.Seconds);
+
+                                this.playerPosition.Text = currentPositon;
+                            
+                                this.playerSlider.Value = posTimeSpan.TotalSeconds;
+                            }
+                        }));
+                    } catch
+                    {
+                        
+                    }
                     
                 }
-                System.Threading.Thread.Sleep(100);
+                Thread.Sleep(1000);
             }
         }
 
@@ -209,6 +258,31 @@ namespace Noise
             } else
             {
                 musicPlayer.Play();
+            }
+        }
+
+        private void playerSlider_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            changingPosition = true;
+
+            musicPlayer.Pause();
+            Console.WriteLine("Dragging the slider");
+        }
+
+        private void playerSlider_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            changingPosition = false;
+            if (!(mf is null))
+            {
+                mf.CurrentTime = TimeSpan.FromSeconds(playerSlider.Value);
+                mf.Position = (long)(playerSlider.Value * mf.WaveFormat.AverageBytesPerSecond);
+
+                musicPlayer.Dispose();
+
+                musicPlayer = new WasapiOut();
+                musicPlayer.Init(mf);
+                musicPlayer.Play();
+                Console.WriteLine("Got a new position: " + mf.CurrentTime);
             }
         }
     }
