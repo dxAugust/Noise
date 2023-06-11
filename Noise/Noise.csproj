@@ -133,6 +133,9 @@
     <Compile Include="MainPages\DiscoverSongs.xaml.cs">
       <DependentUpon>DiscoverSongs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainPages\Studio.xaml.cs">
+      <DependentUpon>Studio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MusicPlatform.xaml.cs">
       <DependentUpon>MusicPlatform.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainPages\DiscoverSongs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPages\Studio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,6 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\house-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-studio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,6 +26,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static Noise.Client.ServerAPI;
 
@@ -41,54 +42,58 @@ namespace Noise
 
         Song currentPlayingSong;
 
-        public DiscoverSongs discoverSongsPage;
-        public static WasapiOut musicPlayer = new WasapiOut();
+        public DiscoverSongs discoverSongsPage = new DiscoverSongs();
+        public Studio studioPage = new Studio();
+
+        public static WasapiOut musicPlayer;
         public static MediaFoundationReader mf;
 
         public bool changingPosition = false;
+
+        public static double time = 2;
+        DoubleAnimation opacity = new DoubleAnimation
+        {
+            From = 0.0,
+            To = 1.0,
+            Duration = new Duration(TimeSpan.FromSeconds(time)),
+            EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+        };
+
+        ThicknessAnimation posY = new ThicknessAnimation
+        {
+            From = new Thickness(40, 0, 0, 0),
+            To = new Thickness(0, 0, 0, 0),
+            Duration = new Duration(TimeSpan.FromSeconds(time)),
+            EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+        };
+
+        ThicknessAnimation posX = new ThicknessAnimation
+        {
+            From = new Thickness(-20, 0, 0, 0),
+            To = new Thickness(0, 0, 0, 0),
+            Duration = new Duration(TimeSpan.FromSeconds(time)),
+            EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+        };
 
         public enum Pages : int
         {
             home = 0,
             studio = 1,
         }
+        public static Pages currentPage = Pages.home;
 
         Thread thread;
 
         public MusicPlatform()
         {
             InitializeComponent();
+            mainScreen.NavigationUIVisibility = NavigationUIVisibility.Hidden;
 
             discoverSongsPage = new DiscoverSongs();
             mainScreen.Navigate(discoverSongsPage);
             discoverSongsPage.playingNewSong += new EventHandler(playSongByIdAsync);
 
             profileName.Content = Config.userInfo.login;
-
-            double time = 2;
-            var opacity = new DoubleAnimation
-            {
-                From = 0.0,
-                To = 1.0,
-                Duration = new Duration(TimeSpan.FromSeconds(time)),
-                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
-            };
-
-            var posY = new ThicknessAnimation
-            {
-                From = new Thickness(40, 0, 0, 0),
-                To = new Thickness(0, 0, 0, 0),
-                Duration = new Duration(TimeSpan.FromSeconds(time)),
-                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
-            };
-
-            var posX = new ThicknessAnimation
-            {
-                From = new Thickness(-20, 0, 0, 0),
-                To = new Thickness(0, 0, 0, 0),
-                Duration = new Duration(TimeSpan.FromSeconds(time)),
-                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
-            };
 
             profilePanel.BeginAnimation(UIElement.OpacityProperty, opacity);
             Timeline.SetDesiredFrameRate(posY, 140);
@@ -118,6 +123,12 @@ namespace Noise
 
             using (mf = new MediaFoundationReader(Config.serverURL + "/" + currentPlayingSong.path))
             {
+                if (!(musicPlayer is null))
+                {
+                    musicPlayer.Dispose();
+                }
+                musicPlayer = new WasapiOut();
+
                 musicPlayer.Volume = (float)((volumeSlider.Value / 10) / 10);
 
                 this.playerSlider.Maximum = mf.TotalTime.TotalSeconds;
@@ -133,15 +144,9 @@ namespace Noise
 
                 this.playerMax.Text = maxLength;
 
-                try
-                {
-                    musicPlayer.Stop();
-                    musicPlayer.Init(mf);
-                    musicPlayer.Play();
-                } catch
-                {
-
-                }
+                
+                musicPlayer.Init(mf);
+                musicPlayer.Play();
             }
         }
 
@@ -157,7 +162,7 @@ namespace Noise
                         {
                             if (!changingPosition)
                             {
-                                TimeSpan posTimeSpan = musicPlayer.GetPositionTimeSpan();
+                                TimeSpan posTimeSpan = mf.CurrentTime;
 
                                 string currentPositon = string.Format("{0:D2}:{1:D2}",
                                 posTimeSpan.Minutes,
@@ -283,6 +288,31 @@ namespace Noise
                 musicPlayer.Init(mf);
                 musicPlayer.Play();
                 Console.WriteLine("Got a new position: " + mf.CurrentTime);
+            }
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage != Pages.home)
+            {
+                currentPage = Pages.home;
+                mainScreen.Navigate(discoverSongsPage);
+
+                categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
+                categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
+                categoryTitleText.Content = (string)Application.Current.Resources["splashMessage"];
+            }
+        }
+        private void Studio_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage != Pages.studio)
+            {
+                currentPage = Pages.studio;
+                mainScreen.Navigate(studioPage);
+
+                categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
+                categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
+                categoryTitleText.Content = (string)Application.Current.Resources["studioCategory"];
             }
         }
     }

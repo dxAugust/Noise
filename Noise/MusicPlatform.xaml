@@ -60,6 +60,7 @@
                     FontSize="36px"
                     TextOptions.TextRenderingMode="ClearType"
                     FontWeight="Bold"
+                    x:Name="categoryTitleText"
                     Content="{DynamicResource splashMessage}"/>
             </StackPanel>
             
@@ -98,20 +99,36 @@
 
             <Border 
                     Background="#181818"
+                    x:Name="programMenu"
                     Grid.RowSpan="3" Grid.Column="0"
                     CornerRadius="25 0 0 0">
                 <StackPanel
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    x:Name="programMenu">
+                    HorizontalAlignment="Center">
                     <Button 
                     Style="{DynamicResource menuItem}"
-                    Margin="10" Padding="10"
-                    Foreground="White">
+                    Margin="5" Padding="10"
+                    Foreground="White"
+                    Click="Home_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image RenderOptions.BitmapScalingMode="HighQuality" Width="28" Height="28" 
                                    Source="/Assets/house-icon.png"/>
                             <Label Content="{DynamicResource menuItem1}" 
+                                   FontSize="16px"
+                                   TextOptions.TextRenderingMode="ClearType"
+                                   Foreground="White"></Label>
+                        </StackPanel>
+                    </Button>
+
+                    <Button 
+                    Style="{DynamicResource menuItem}"
+                    Margin="5" Padding="10"
+                    Foreground="White"
+                    Click="Studio_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" Width="28" Height="28" 
+                                   Source="/Assets/icon-studio.png"/>
+                            <Label Content="{DynamicResource menuItem2}" 
                                    FontSize="16px"
                                    TextOptions.TextRenderingMode="ClearType"
                                    Foreground="White"></Label>

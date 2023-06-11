@@ -198,3 +198,5 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Microsof
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.AccessControl.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\Studio.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\Studio.baml
