@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\
+J:\Files\GitHub\Noise\Noise\obj\Debug\
 Noise
 none
 false
 DEBUG;TRACE
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\App.xaml
-6-159385117
+J:\Files\GitHub\Noise\Noise\App.xaml
+9-667904409
 
-17-1738337747
-371474653931
-MainPages\DiscoverSongs.xaml;MainPages\Studio.xaml;MainWindow.xaml;MusicPlatform.xaml;Resources\lang.ru-RU.xaml;RegisterWindow.xaml;
+17-1908559195
+37921102054
+MainPages\DiscoverSongs.xaml;MainPages\Studio.xaml;MainWindow.xaml;MusicPlatform.xaml;Resources\lang.ru-RU.xaml;RegisterWindow.xaml;Styles\ButtonStyles.xaml;Styles\DataGridStyle.xaml;Styles\MenuStyles.xaml;
 
 False
 

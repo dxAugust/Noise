@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using Noise.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Noise.Client.ServerAPI;
 
 namespace Noise.MainPages
 {
@@ -44,6 +47,26 @@ namespace Noise.MainPages
 
             StudioPage.BeginAnimation(UIElement.OpacityProperty, opacity);
             StudioPage.BeginAnimation(StackPanel.MarginProperty, posY);
+
+            fetchSongsByArtist(Config.userInfo.session_token);
+        }
+
+        private void fetchSongsByArtist(string session_token)
+        {
+            ServerResponse serverResponse = await ServerAPI.fetchAllSongs();
+
+            try
+            {
+                var discoverSongs = JArray.Parse(serverResponse.response).OfType<JObject>();
+            } catch (Exception e) {
+
+            }
+                
+        }
+
+        public void refreshSongsList()
+        {
+
         }
     }
 }

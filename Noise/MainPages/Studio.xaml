@@ -9,7 +9,9 @@
       Title="Studio">
     <Grid
         x:Name="StudioPage">
-        <DataGrid x:Name="SongsList" Style="{DynamicResource songsGrid}">
+        <DataGrid x:Name="SongsList" 
+                  Style="{DynamicResource songsGrid}"
+                  ColumnHeaderStyle="{DynamicResource songListCollumnHeader}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{DynamicResource imageCollumn}" Binding="{Binding Path=image}"/>
                 <DataGridTextColumn Header="{DynamicResource nameCollumn}" Binding="{Binding Path=name}"/>

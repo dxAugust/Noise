@@ -18,7 +18,7 @@
         WindowStartupLocation="CenterScreen">
     <Border CornerRadius="25" 
             VerticalAlignment="Stretch" 
-            Background="#141414"
+            Background="{DynamicResource PrimaryAppColor}"
             x:Name="windowBorder">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -240,8 +240,7 @@
                           HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
                 <Frame 
-                    x:Name="mainScreen"
-                    Source="MainPages/DiscoverSongs.xaml"/>
+                    x:Name="mainScreen"/>
             </ScrollViewer>
         </Grid>
     </Border>

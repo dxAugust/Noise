@@ -28,7 +28,7 @@
 
     <!-- Data Grid strings -->
     <v:String x:Key="nameCollumn">Name</v:String>
-    <v:String x:Key="imageCollumn">Image</v:String>
+    <v:String x:Key="imageCollumn">Thumbnail</v:String>
     <v:String x:Key="playsCollumn">Plays</v:String>
     <v:String x:Key="pubCollumn">Publication date</v:String>
     <!---->
