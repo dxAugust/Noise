@@ -9,6 +9,13 @@
       Title="Studio">
     <Grid
         x:Name="StudioPage">
-        
+        <DataGrid x:Name="SongsList" Style="{DynamicResource songsGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource imageCollumn}" Binding="{Binding Path=image}"/>
+                <DataGridTextColumn Header="{DynamicResource nameCollumn}" Binding="{Binding Path=name}"/>
+                <DataGridTextColumn Header="{DynamicResource playsCollumn}" Binding="{Binding Path=plays}"/>
+                <DataGridTextColumn Header="{DynamicResource pubCollumn}" Binding="{Binding Path=publication_date}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

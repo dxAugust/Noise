@@ -26,6 +26,13 @@
     <v:String x:Key="splashMessage">Discover something new</v:String>
     <v:String x:Key="studioCategory">Studio</v:String>
 
+    <!-- Data Grid strings -->
+    <v:String x:Key="nameCollumn">Name</v:String>
+    <v:String x:Key="imageCollumn">Image</v:String>
+    <v:String x:Key="playsCollumn">Plays</v:String>
+    <v:String x:Key="pubCollumn">Publication date</v:String>
+    <!---->
+    
     <!-- Menu items locale -->
     <v:String x:Key="menuItem1">Home</v:String>
     <v:String x:Key="menuItem2">Studio</v:String>

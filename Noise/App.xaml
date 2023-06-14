@@ -130,6 +130,12 @@
                 </Setter>
             </Style>
 
+
+            <Style x:Key="songsGrid" TargetType="DataGrid">
+                
+            </Style>
+
+
             <Style TargetType="CheckBox">
                 <Setter Property="SnapsToDevicePixels" Value="true" />
                 <Setter Property="OverridesDefaultStyle" Value="true" />
