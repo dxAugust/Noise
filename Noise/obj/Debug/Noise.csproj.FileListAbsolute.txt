@@ -174,8 +174,6 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.T
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Text.Json.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.ValueTuple.xml
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.g.cs
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.g.cs
 J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.dll
@@ -197,8 +195,6 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Microsof
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.AccessControl.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.Principal.Windows.xml
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\Studio.g.cs
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainPages\Studio.baml
 J:\Files\GitHub\Noise\Noise\bin\Debug\Microsoft.Win32.Registry.dll
 J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.Asio.dll
 J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.Core.dll
@@ -224,3 +220,13 @@ J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\Studio.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\ButtonStyles.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\MenuStyles.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\DataGridStyle.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ButtonStyles.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\DataGridStyle.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\MenuStyles.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ColorPallete.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\StudioPages\ArtistInfo.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\StudioPages\ArtistInfo.baml

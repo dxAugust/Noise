@@ -130,23 +130,26 @@
     <Compile Include="Client\ServerError.cs" />
     <Compile Include="Client\Song.cs" />
     <Compile Include="Client\User.cs" />
-    <Compile Include="MainPages\DiscoverSongs.xaml.cs">
+    <Compile Include="Pages\DiscoverSongs.xaml.cs">
       <DependentUpon>DiscoverSongs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPages\Studio.xaml.cs">
+    <Compile Include="Pages\Studio.xaml.cs">
       <DependentUpon>Studio.xaml</DependentUpon>
     </Compile>
     <Compile Include="MusicPlatform.xaml.cs">
       <DependentUpon>MusicPlatform.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StudioPages\ArtistInfo.xaml.cs">
+      <DependentUpon>ArtistInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainPages\DiscoverSongs.xaml">
+    <Page Include="Pages\DiscoverSongs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPages\Studio.xaml">
+    <Page Include="Pages\Studio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +169,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\StudioPages\ArtistInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\lang.ru-RU.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -176,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ColorPallete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

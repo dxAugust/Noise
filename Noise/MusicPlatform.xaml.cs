@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Noise.Client;
 using Noise.MainPages;
+using Noise.Pages.StudioPages;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -67,6 +68,14 @@ namespace Noise
             EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
         };
 
+        ThicknessAnimation smallPosYAnimation = new ThicknessAnimation
+        {
+            From = new Thickness(0, 10, 0, 0),
+            To = new Thickness(0, 0, 0, 0),
+            Duration = new Duration(TimeSpan.FromSeconds(time)),
+            EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+        };
+
         ThicknessAnimation posX = new ThicknessAnimation
         {
             From = new Thickness(-20, 0, 0, 0),
@@ -87,6 +96,9 @@ namespace Noise
         public MusicPlatform()
         {
             InitializeComponent();
+            songsPlayer.Opacity = 0;
+            songsPlayer.Visibility = Visibility.Hidden;
+
             mainScreen.NavigationUIVisibility = NavigationUIVisibility.Hidden;
 
             discoverSongsPage = new DiscoverSongs();
@@ -99,6 +111,7 @@ namespace Noise
             Timeline.SetDesiredFrameRate(posY, 140);
             Timeline.SetDesiredFrameRate(opacity, 140);
             Timeline.SetDesiredFrameRate(posX, 140);
+            Timeline.SetDesiredFrameRate(smallPosYAnimation, 140);
             profilePanel.BeginAnimation(Grid.MarginProperty, posY);
             categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
             categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
@@ -144,7 +157,10 @@ namespace Noise
 
                 this.playerMax.Text = maxLength;
 
-                
+                songsPlayer.BeginAnimation(Grid.MarginProperty, smallPosYAnimation);
+                songsPlayer.BeginAnimation(Grid.OpacityProperty, opacity);
+                songsPlayer.Visibility = Visibility.Visible;
+
                 musicPlayer.Init(mf);
                 musicPlayer.Play();
             }
@@ -314,6 +330,23 @@ namespace Noise
                 categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
                 categoryTitleText.Content = (string)Application.Current.Resources["studioCategory"];
             }
+        }
+
+        private async void storeArtistInfo(string artistName)
+        {
+            ServerResponse serverResponse = await ServerAPI.getArtistInfoByName(artistName);
+            if (serverResponse.statusCode == 200)
+            {
+                Artist artist = JsonConvert.DeserializeObject<Artist>(serverResponse.response);
+                mainScreen.BeginAnimation(Frame.MarginProperty, smallPosYAnimation);
+                mainScreen.BeginAnimation(Frame.OpacityProperty, opacity);
+                mainScreen.Navigate(new ArtistInfo(artist));
+            }
+        }
+
+        private void artistName_Click(object sender, MouseButtonEventArgs e)
+        {
+            storeArtistInfo((string)currentPlayingArtistName.Content);
         }
     }
 }

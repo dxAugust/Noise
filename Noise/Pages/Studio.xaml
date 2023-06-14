@@ -1,0 +1,40 @@
+﻿<Page x:Class="Noise.MainPages.Studio"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Noise.MainPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Studio">
+    <Grid
+        x:Name="StudioPage">
+        <DataGrid x:Name="SongsList" 
+                  Style="{DynamicResource songsGrid}"
+                  ColumnHeaderStyle="{DynamicResource songListCollumnHeader}"
+                  RowStyle="{DynamicResource songListRows}"
+                  CellStyle="{DynamicResource songListCells}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{DynamicResource imageCollumn}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Width="100" 
+                            Height="100" 
+                            CornerRadius="15">
+                                <Border.Background>
+                                    <ImageBrush 
+                                    RenderOptions.BitmapScalingMode="HighQuality"
+                                    Stretch="Fill" 
+                                    ImageSource="{Binding Path=image}"/>
+                                </Border.Background>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{DynamicResource nameCollumn}" Binding="{Binding Path=name}"/>
+                <DataGridTextColumn Header="{DynamicResource playsCollumn}" Binding="{Binding Path=plays}"/>
+                <DataGridTextColumn Header="{DynamicResource pubCollumn}" Binding="{Binding Path=publicationDate}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

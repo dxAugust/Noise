@@ -33,6 +33,21 @@
     <v:String x:Key="pubCollumn">Publication date</v:String>
     <!---->
     
+    <!-- Month names -->
+    <v:String x:Key="month_1">January</v:String>
+    <v:String x:Key="month_2">February</v:String>
+    <v:String x:Key="month_3">March</v:String>
+    <v:String x:Key="month_4">April</v:String>
+    <v:String x:Key="month_5">May</v:String>
+    <v:String x:Key="month_6">June</v:String>
+    <v:String x:Key="month_7">July</v:String>
+    <v:String x:Key="month_8">August</v:String>
+    <v:String x:Key="month_9">September</v:String>
+    <v:String x:Key="month_10">October</v:String>
+    <v:String x:Key="month_11">November</v:String>
+    <v:String x:Key="month_12">December</v:String>
+    <!---->
+    
     <!-- Menu items locale -->
     <v:String x:Key="menuItem1">Home</v:String>
     <v:String x:Key="menuItem2">Studio</v:String>

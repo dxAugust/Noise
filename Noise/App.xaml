@@ -9,12 +9,7 @@
                 <ResourceDictionary
                     Source="Resources\lang.xaml"/>
 
-                <ResourceDictionary>
-                    <SolidColorBrush x:Key="PrimaryAppColor" Color="#141414"/>
-
-                    <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFFFFF"/>
-                    <SolidColorBrush x:Key="SecondaryTextColor" Color="#909090"/>
-                </ResourceDictionary>
+                <ResourceDictionary Source="/Styles/ColorPallete.xaml"/>
 
                 <ResourceDictionary Source="/Styles/ButtonStyles.xaml"/>
                 <ResourceDictionary Source="/Styles/MenuStyles.xaml"/>
