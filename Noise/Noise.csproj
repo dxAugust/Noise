@@ -139,7 +139,7 @@
     <Compile Include="MusicPlatform.xaml.cs">
       <DependentUpon>MusicPlatform.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\StudioPages\ArtistInfo.xaml.cs">
+    <Compile Include="Pages\ArtistInfo.xaml.cs">
       <DependentUpon>ArtistInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegisterWindow.xaml.cs">
@@ -169,7 +169,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\StudioPages\ArtistInfo.xaml">
+    <Page Include="Pages\ArtistInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,6 +262,14 @@
   <ItemGroup>
     <Resource Include="Assets\icon-studio.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\StudioPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-arrow-down.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

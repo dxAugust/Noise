@@ -126,6 +126,20 @@ namespace Noise.Client
             return serverResponse;
         }
 
+        public static async Task<ServerResponse> getLastRelease(int artistId)
+        {
+            var response = await client.GetAsync(Config.apiURL + "songs/lastsong/" + artistId);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
         public static async Task<ServerResponse> fetchSongByArtistUID(int userid)
         {
             var response = await client.GetAsync(Config.apiURL + "studio/songlist/" + userid);

@@ -78,12 +78,13 @@
                             Name="buttonBorder"    
                             Background="Transparent"
                             ClipToBounds="True"
-                            CornerRadius="0 25 0 0"
+                            CornerRadius="25"
+                            Padding="10"
                             >
                         <ContentPresenter
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Margin="{TemplateBinding Padding}" ></ContentPresenter>
+                            ></ContentPresenter>
                     </Border>
 
                     <ControlTemplate.Triggers>

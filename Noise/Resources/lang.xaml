@@ -26,6 +26,8 @@
     <v:String x:Key="splashMessage">Discover something new</v:String>
     <v:String x:Key="studioCategory">Studio</v:String>
 
+    <v:String x:Key="releaseLabel">Latest Release</v:String>
+
     <!-- Data Grid strings -->
     <v:String x:Key="nameCollumn">Name</v:String>
     <v:String x:Key="imageCollumn">Thumbnail</v:String>

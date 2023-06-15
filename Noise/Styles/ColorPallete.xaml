@@ -6,9 +6,15 @@
 
     <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="SecondaryTextColor" Color="#909090"/>
-    
+
+    <SolidColorBrush x:Key="SecondaryAppColor" Color="#252525"/>
+
+    <SolidColorBrush x:Key="MainTextColor" Color="#404040"/>
+
     <!-- Data Grid Color Pallete -->
     <SolidColorBrush x:Key="HoverDataGridItem" Color="#303030"/>
     <SolidColorBrush x:Key="SelectedDataGridItem" Color="#404040"/>
+    
+    
     <!-- END OF DARK THEME COLOR PALETE -->
 </ResourceDictionary>

@@ -174,8 +174,6 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.T
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Text.Json.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.ValueTuple.xml
-J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.g.cs
-J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\DiscoverSongs.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.dll
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.pdb
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.dll
@@ -214,9 +212,6 @@ J:\Files\GitHub\Noise\Noise\bin\Debug\System.Security.Principal.Windows.xml
 J:\Files\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.pdb
 J:\Files\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.xml
 J:\Files\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.pdb
-J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
-J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\Studio.g.cs
-J:\Files\GitHub\Noise\Noise\obj\Debug\MainPages\Studio.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\ButtonStyles.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\MenuStyles.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\DataGridStyle.baml
@@ -230,3 +225,11 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\St
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\StudioPages\ArtistInfo.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csprojAssemblyReference.cache
+J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\ColorPallete.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Studio.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.baml

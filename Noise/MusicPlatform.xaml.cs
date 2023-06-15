@@ -60,6 +60,14 @@ namespace Noise
             EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
         };
 
+        DoubleAnimation smallOpacity = new DoubleAnimation
+        {
+            From = 0.4,
+            To = 1.0,
+            Duration = new Duration(TimeSpan.FromSeconds(time)),
+            EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+        };
+
         ThicknessAnimation posY = new ThicknessAnimation
         {
             From = new Thickness(40, 0, 0, 0),
@@ -275,9 +283,17 @@ namespace Noise
         {
             if (musicPlayer.PlaybackState == PlaybackState.Playing)
             {
+                Uri playURI = new Uri("./Assets/icon-play.png", UriKind.Relative);
+                BitmapImage playImage = new BitmapImage(playURI);
+                playButtonImage.BeginAnimation(Image.OpacityProperty, smallOpacity);
+                playButtonImage.Source = playImage;
                 musicPlayer.Pause();
             } else
             {
+                Uri pauseURI = new Uri("./Assets/icon-pause.png", UriKind.Relative);
+                BitmapImage pauseImage = new BitmapImage(pauseURI);
+                playButtonImage.BeginAnimation(Image.OpacityProperty, smallOpacity);
+                playButtonImage.Source = pauseImage;
                 musicPlayer.Play();
             }
         }
