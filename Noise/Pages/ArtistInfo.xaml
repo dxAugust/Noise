@@ -13,38 +13,42 @@
             <RowDefinition Height="1.4*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0"
-                    VerticalAlignment="Bottom">
-            <Border Margin="20">
-                <Border.Background>
-                    <ImageBrush 
-                    RenderOptions.BitmapScalingMode="HighQuality"
-                    Stretch="Fill"
-                    x:Name="artistBanner"/>
-                </Border.Background>
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush 
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        Stretch="Fill"
+                        x:Name="artistBanner"/>
+            </StackPanel.Background>
+            
+            
+            <StackPanel 
+                        VerticalAlignment="Bottom">
+                <Border
+                    Margin="20">
+                    <WrapPanel
+                        Orientation="Vertical">
+                        <Label
+                        TextOptions.TextRenderingMode="ClearType"
+                        FontFamily="Segoe UI" 
+                        FontSize="24"
+                        Foreground="{DynamicResource PrimaryTextColor}"
+                        FontWeight="Bold"
+                        x:Name="artistName">
+                            ArtistName
+                        </Label>
 
-                <WrapPanel
-                    Orientation="Vertical">
-                    <Label
-                    TextOptions.TextRenderingMode="ClearType"
-                    FontFamily="Segoe UI" 
-                    FontSize="24"
-                    Foreground="{DynamicResource PrimaryTextColor}"
-                    FontWeight="Bold"
-                    x:Name="artistName">
-                        ArtistName
-                    </Label>
-
-                    <Label
-                    TextOptions.TextRenderingMode="ClearType"
-                    FontFamily="Segoe UI" 
-                    FontSize="16"
-                    Foreground="{DynamicResource SecondaryTextColor}"
-                    x:Name="artistDescription">
-                        4AM I have to sleep
-                    </Label>
-                </WrapPanel>
-            </Border>
+                        <Label
+                        TextOptions.TextRenderingMode="ClearType"
+                        FontFamily="Segoe UI" 
+                        FontSize="16"
+                        Foreground="{DynamicResource SecondaryTextColor}"
+                        x:Name="artistDescription">
+                            4AM I have to sleep
+                        </Label>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="1" 

@@ -29,6 +29,9 @@ namespace Noise.Pages.StudioPages
 
             artistName.Content = artistInfo.username;
             artistDescription.Content = artistInfo.description;
+            Uri bannerURI = new Uri(Config.serverURL + "/" + artistInfo.banner, UriKind.RelativeOrAbsolute);
+            BitmapImage bannerImage = new BitmapImage(bannerURI);
+            artistBanner.ImageSource = bannerImage;
             setupLastRelease(artistInfo);
         }
 

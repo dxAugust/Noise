@@ -221,10 +221,8 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\M
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ColorPallete.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.g.cs
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.g.cs
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\StudioPages\ArtistInfo.g.cs
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
-C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\StudioPages\ArtistInfo.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csprojAssemblyReference.cache
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\ColorPallete.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.g.cs
@@ -233,3 +231,9 @@ J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.g.cs
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\TextStyles.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ComboBoxStyle.baml

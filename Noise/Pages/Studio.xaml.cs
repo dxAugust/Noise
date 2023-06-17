@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using Noise.Client;
+using Noise.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,6 +110,11 @@ namespace Noise.MainPages
         public void refreshSongsList()
         {
 
+        }
+
+        private void Upload_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SongUpload(null));
         }
     }
 }

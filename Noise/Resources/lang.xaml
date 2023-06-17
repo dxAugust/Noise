@@ -54,4 +54,21 @@
     <v:String x:Key="menuItem1">Home</v:String>
     <v:String x:Key="menuItem2">Studio</v:String>
     <!---->
+    
+    <!-- Song Editing page -->
+    <v:String x:Key="songTitlePlaceholder">Song title:</v:String>
+    <v:String x:Key="songGenrePlaceholder">Genre:</v:String>
+    <!---->
+    
+    <!-- Song Genres -->
+    <v:String x:Key="genre_hiphop">Hip-Hop</v:String>
+    <v:String x:Key="genre_mashup">Mashup</v:String>    
+    <!---->
+
+    <v:String x:Key="uploadSongButton">Upload song</v:String>
+    <v:String x:Key="editSongButton">Edit song</v:String>
+    <v:String x:Key="thumbnailUpload">Drop or click to upload thumbnail</v:String>
+    <v:String x:Key="songUpload">Drop or click to upload melody</v:String>
+    
+    <!---->
 </ResourceDictionary>

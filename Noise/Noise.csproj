@@ -125,13 +125,18 @@
     <Compile Include="Client\Album.cs" />
     <Compile Include="Client\Artist.cs" />
     <Compile Include="Client\Config.cs" />
+    <Compile Include="Client\Genre.cs" />
     <Compile Include="Client\Playlist.cs" />
     <Compile Include="Client\ServerAPI.cs" />
     <Compile Include="Client\ServerError.cs" />
     <Compile Include="Client\Song.cs" />
+    <Compile Include="Client\UploadData.cs" />
     <Compile Include="Client\User.cs" />
     <Compile Include="Pages\DiscoverSongs.xaml.cs">
       <DependentUpon>DiscoverSongs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SongUpload.xaml.cs">
+      <DependentUpon>SongUpload.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Studio.xaml.cs">
       <DependentUpon>Studio.xaml</DependentUpon>
@@ -146,6 +151,10 @@
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\DiscoverSongs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SongUpload.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,11 +199,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\DataGridStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\MenuStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -263,13 +280,22 @@
     <Resource Include="Assets\icon-studio.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\StudioPages\" />
+    <Resource Include="Assets\icon-upload.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\icon-pause.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\icon-arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-melody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-music-green.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

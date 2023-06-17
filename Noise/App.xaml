@@ -11,9 +11,11 @@
 
                 <ResourceDictionary Source="/Styles/ColorPallete.xaml"/>
 
+                <ResourceDictionary Source="/Styles/TextStyles.xaml"/>
                 <ResourceDictionary Source="/Styles/ButtonStyles.xaml"/>
                 <ResourceDictionary Source="/Styles/MenuStyles.xaml"/>
                 <ResourceDictionary Source="/Styles/DataGridStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/ComboBoxStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

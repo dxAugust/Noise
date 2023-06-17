@@ -1,0 +1,149 @@
+﻿<Page x:Class="Noise.Pages.SongUpload"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Noise.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="800"
+      Title="SongUpload">
+    <Grid
+        x:Name="songUploadPanel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1">
+            <DockPanel>
+                <Label
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe UI" 
+                    FontSize="16" 
+                    Foreground="{DynamicResource PrimaryTextColor}" 
+                    FontWeight="Bold"
+                    Content="{DynamicResource songTitlePlaceholder}"/>
+                <Border CornerRadius="5" BorderThickness="1" BorderBrush="#212121" Margin="10">
+                    <DockPanel  
+                        Background="Transparent">
+                        <TextBox Background="#212121" 
+                             Foreground="White" 
+                             Height="40" 
+                             VerticalContentAlignment="Center" 
+                             BorderThickness="0" 
+                             x:Name="songTitleBox" 
+                             FontSize="16"/>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+
+            <DockPanel>
+                <Label
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe UI" 
+                    FontSize="16" 
+                    Foreground="{DynamicResource PrimaryTextColor}" 
+                    FontWeight="Bold"
+                    Content="{DynamicResource songGenrePlaceholder}"/>
+                <Border CornerRadius="5" BorderThickness="1" BorderBrush="#212121" Margin="10">
+                    <DockPanel  
+                        Background="Transparent">
+                        <ComboBox
+                             Background="#212121" 
+                             Foreground="White" 
+                             Height="40" 
+                             VerticalContentAlignment="Center" 
+                             BorderThickness="0" 
+                             x:Name="songGenreList" 
+                             FontSize="16">
+                            
+                        </ComboBox>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+
+            <DockPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <Border
+                    BorderBrush="{DynamicResource MainTextColor}"
+                    BorderThickness="1"
+                    PreviewMouseLeftButtonDown="Upload_PreviewMouseLeftButtonDown"
+                    Padding="30"
+                    Margin="20"
+                    x:Name="thumbDropArea">
+                    <WrapPanel Orientation="Vertical">
+                        <Image
+                            Width="64"
+                            Height="64"
+                            RenderOptions.BitmapScalingMode="HighQuality"
+                            Source="/Assets/icon-thumbnail.png"/>
+                        <Label
+                            HorizontalContentAlignment="Center"
+                            Width="150"
+                            Foreground="{DynamicResource MainTextColor}">
+                            <TextBlock TextWrapping="WrapWithOverflow"
+                                       TextAlignment="Center"
+                                       Text="{DynamicResource thumbnailUpload}"/>
+                        </Label>
+                    </WrapPanel>
+                </Border>
+            </DockPanel>
+
+            <DockPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <Border
+                    BorderBrush="{DynamicResource MainTextColor}"
+                    BorderThickness="1"
+                    PreviewMouseLeftButtonDown="UploadMelody_PreviewMouseLeftButtonDown"
+                    Padding="30"
+                    Margin="20"
+                    x:Name="musicDropArea">
+                    <WrapPanel Orientation="Vertical">
+                        <Image
+                            Width="64"
+                            Height="64"
+                            RenderOptions.BitmapScalingMode="HighQuality"
+                            x:Name="melodyIcon"
+                            Source="/Assets/icon-melody.png"/>
+                        <Label
+                            HorizontalContentAlignment="Center"
+                            Width="150"
+                            Foreground="{DynamicResource MainTextColor}">
+                            <TextBlock TextWrapping="WrapWithOverflow"
+                                       TextAlignment="Center"
+                                       Text="{DynamicResource songUpload}"
+                                       x:Name="melodyTooltip"/>
+                        </Label>
+                    </WrapPanel>
+                </Border>
+            </DockPanel>
+
+            <DockPanel>
+                <Label
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Foreground="Red"
+                    FontSize="16"
+                    Content="Error text will be here"
+                    x:Name="uploadErrorText">
+                    
+                </Label>
+            </DockPanel>
+            
+            <DockPanel>
+                <Button
+                    Margin="130 0 130 0"
+                    Padding="10"
+                    Content="{DynamicResource uploadSongButton}"
+                    Style="{DynamicResource roundButton}"
+                    x:Name="uploadButton"
+                    Click="UploadButton_Click">
+                    
+                </Button>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Page>

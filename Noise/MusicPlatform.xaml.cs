@@ -46,7 +46,7 @@ namespace Noise
         public DiscoverSongs discoverSongsPage = new DiscoverSongs();
         public Studio studioPage = new Studio();
 
-        public static WasapiOut musicPlayer;
+        public static WaveOut musicPlayer = new WaveOut();
         public static MediaFoundationReader mf;
 
         public bool changingPosition = false;
@@ -142,13 +142,13 @@ namespace Noise
             BitmapImage thumbnailImage = new BitmapImage(thumbURI);
             currentPlayingThumb.ImageSource = thumbnailImage;
 
-            using (mf = new MediaFoundationReader(Config.serverURL + "/" + currentPlayingSong.path))
+            using (mf = new MediaFoundationReader(Config.serverURL + currentPlayingSong.path))
             {
                 if (!(musicPlayer is null))
                 {
                     musicPlayer.Dispose();
                 }
-                musicPlayer = new WasapiOut();
+                musicPlayer = new WaveOut();
 
                 musicPlayer.Volume = (float)((volumeSlider.Value / 10) / 10);
 
@@ -156,8 +156,6 @@ namespace Noise
 
                 thread = new Thread(OnSongPlaying);
                 thread.Start();
-
-                Console.WriteLine(mf.TotalTime.TotalSeconds);
 
                 string maxLength = string.Format("{0:D2}:{1:D2}",
                 mf.TotalTime.Minutes,
@@ -316,7 +314,7 @@ namespace Noise
 
                 musicPlayer.Dispose();
 
-                musicPlayer = new WasapiOut();
+                musicPlayer = new WaveOut();
                 musicPlayer.Init(mf);
                 musicPlayer.Play();
                 Console.WriteLine("Got a new position: " + mf.CurrentTime);
@@ -328,7 +326,9 @@ namespace Noise
             if (currentPage != Pages.home)
             {
                 currentPage = Pages.home;
+                discoverSongsPage = new DiscoverSongs();
                 mainScreen.Navigate(discoverSongsPage);
+                discoverSongsPage.playingNewSong += new EventHandler(playSongByIdAsync);
 
                 categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
                 categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
@@ -340,7 +340,7 @@ namespace Noise
             if (currentPage != Pages.studio)
             {
                 currentPage = Pages.studio;
-                mainScreen.Navigate(studioPage);
+                mainScreen.Navigate(new Studio());
 
                 categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
                 categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);

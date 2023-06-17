@@ -102,7 +102,7 @@
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Height" Value="32" />
         <Setter Property="Width" Value="138" />
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource MyFocusVisualStyte}" />
+        
         <Setter Property="Foreground" Value="#FFF" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">

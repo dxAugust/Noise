@@ -168,7 +168,21 @@ namespace Noise.Client
             return serverResponse;
         }
 
-        public static async Task<ServerResponse> uploadSong()
+        public static async Task<ServerResponse> fetchGenreList()
+        {
+            var response = await client.GetAsync(Config.apiURL + "songs/genrelist/");
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
+        public static async Task<ServerResponse> uploadSong(UploadData songUploadData)
         {
             var response = await client.GetAsync(Config.apiURL + "songs/upload/");
             var responseString = await response.Content.ReadAsStringAsync();
