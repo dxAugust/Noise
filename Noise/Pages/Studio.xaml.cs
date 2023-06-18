@@ -1,8 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Noise.Client;
 using Noise.Pages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,7 +98,7 @@ namespace Noise.MainPages
                         });
                     }
 
-                    SongsList.ItemsSource = songList;
+                    SongsList.ItemsSource = songList.OrderBy(song => song.publicationDate).ToList();
                 } else
                 {
 
@@ -115,6 +117,28 @@ namespace Noise.MainPages
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SongUpload(null));
+        }
+
+        private async void openEditTab(songItem songItem)
+        {
+            ServerResponse serverResponse = await ServerAPI.fetchSongById(songItem.song_id);
+            
+            if (serverResponse.statusCode == 200)
+            {
+                NavigationService.Navigate(new SongUpload(JsonConvert.DeserializeObject<Song>(serverResponse.response)));
+            }
+        }
+
+        private void SongsList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            if (SongsList.SelectedItems.Count > 0)
+            {
+                foreach (var song in SongsList.SelectedItems)
+                {
+                    songItem songItem = song as songItem;
+                    openEditTab(songItem);
+                }
+            }
         }
     }
 }

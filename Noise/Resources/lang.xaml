@@ -70,5 +70,7 @@
     <v:String x:Key="thumbnailUpload">Drop or click to upload thumbnail</v:String>
     <v:String x:Key="songUpload">Drop or click to upload melody</v:String>
     
+    <v:String x:Key="msgSongFileExist">Melody file on server</v:String>
+    
     <!---->
 </ResourceDictionary>

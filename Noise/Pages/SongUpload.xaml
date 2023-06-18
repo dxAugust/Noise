@@ -32,7 +32,7 @@
                              Height="40" 
                              VerticalContentAlignment="Center" 
                              BorderThickness="0" 
-                             x:Name="songTitleBox" 
+                             x:Name="songTitleBox"
                              FontSize="16"/>
                     </DockPanel>
                 </Border>

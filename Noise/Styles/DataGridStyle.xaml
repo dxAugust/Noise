@@ -16,7 +16,8 @@
         <Setter Property="SelectionUnit" Value="FullRow" />
         <Setter Property="CanUserAddRows" Value="False" />
         <Setter Property="CanUserDeleteRows" Value="False" />
-        <Setter Property="CanUserReorderColumns" Value="False" />
+        <Setter Property="CanUserReorderColumns" Value="True" />
+        <Setter Property="IsReadOnly" Value="True"/>
         <Setter Property="CanUserResizeRows" Value="False" />
         <Setter Property="CanUserResizeColumns" Value="False"/>
         <Setter Property="FontSize" Value="14" />

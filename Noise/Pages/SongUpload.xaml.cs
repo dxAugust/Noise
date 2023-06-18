@@ -61,6 +61,19 @@ namespace Noise.Pages
             if (song != null) 
             {
                 songData = song;
+                songTitleBox.Text = song.name;
+                songGenreList.SelectedIndex = song.genre;
+
+                Image thumbnailPreview = new Image();
+                thumbnailPreview.Width = 128;
+                thumbnailPreview.Height = 128;
+
+                thumbnailPreview.Source = new BitmapImage(new Uri(Config.serverURL + "/thumbnails/" + song.id + ".png"));
+                thumbDropArea.Child = thumbnailPreview;
+
+                melodyIcon.Source = new BitmapImage(new Uri("/Assets/icon-music-green.png", UriKind.RelativeOrAbsolute));
+                melodyTooltip.Text = (string)Application.Current.Resources["msgSongFileExist"];
+
                 uploadButton.Content = (string)Application.Current.Resources["editSongButton"];
             }
         }
@@ -114,6 +127,20 @@ namespace Noise.Pages
         private void UploadButton_Click(object sender, RoutedEventArgs e)
         {
             if (songData is null)
+            {
+                if (melodyUri.Length != 0
+                && thumbnailUri.Length != 0
+                && songTitleBox.Text.Length != 0)
+                {
+                    UploadData songUploadData = new UploadData()
+                    {
+                        songName = songTitleBox.Text,
+                        songGenreId = songGenreList.SelectedIndex,
+                    };
+
+
+                }
+            } else
             {
                 if (melodyUri.Length != 0
                 && thumbnailUri.Length != 0
