@@ -132,8 +132,14 @@
     <Compile Include="Client\Song.cs" />
     <Compile Include="Client\UploadData.cs" />
     <Compile Include="Client\User.cs" />
+    <Compile Include="Pages\CreateArtist.xaml.cs">
+      <DependentUpon>CreateArtist.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DiscoverSongs.xaml.cs">
       <DependentUpon>DiscoverSongs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditArtist.xaml.cs">
+      <DependentUpon>EditArtist.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SongUpload.xaml.cs">
       <DependentUpon>SongUpload.xaml</DependentUpon>
@@ -150,7 +156,15 @@
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\CreateArtist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DiscoverSongs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditArtist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

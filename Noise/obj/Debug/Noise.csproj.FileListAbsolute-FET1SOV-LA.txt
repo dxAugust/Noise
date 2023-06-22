@@ -1,0 +1,243 @@
+C:\Users\Fetisov\source\repos\Noise\Noise\bin\Debug\Noise.exe.config
+C:\Users\Fetisov\source\repos\Noise\Noise\bin\Debug\Noise.exe
+C:\Users\Fetisov\source\repos\Noise\Noise\bin\Debug\Noise.pdb
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\MainWindow.g.cs
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\App.g.cs
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise_MarkupCompile.cache
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise_MarkupCompile.lref
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\MainWindow.baml
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise.g.resources
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise.Properties.Resources.resources
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise.csproj.GenerateResource.cache
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise.csproj.CoreCompileInputs.cache
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise.exe
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Noise.pdb
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\App.baml
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\RegisterWindow.g.cs
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\RegisterWindow.baml
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\MusicPlatform.g.cs
+C:\Users\Fetisov\source\repos\Noise\Noise\obj\Debug\MusicPlatform.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\bin\Debug\Noise.exe.config
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\bin\Debug\Noise.exe
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\bin\Debug\Noise.pdb
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.csproj.SuggestedBindingRedirects.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\MainWindow.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\MainWindow.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\MusicPlatform.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\RegisterWindow.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\App.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise_MarkupCompile.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise_MarkupCompile.lref
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\App.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\MusicPlatform.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\RegisterWindow.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.g.resources
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.Properties.Resources.resources
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.csproj.GenerateResource.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.csproj.CoreCompileInputs.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.exe
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise\obj\Debug\Noise.pdb
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\bin\Debug\Noise.exe.config
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\bin\Debug\Noise.exe
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\bin\Debug\Noise.pdb
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.csproj.SuggestedBindingRedirects.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\MainWindow.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\MainWindow.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\MusicPlatform.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\RegisterWindow.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\App.g.cs
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise_MarkupCompile.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise_MarkupCompile.lref
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\App.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\MusicPlatform.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\RegisterWindow.baml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.g.resources
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.Properties.Resources.resources
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.csproj.GenerateResource.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.csproj.CoreCompileInputs.cache
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.exe
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.pdb
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\bin\Debug\Newtonsoft.Json.dll
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\bin\Debug\Newtonsoft.Json.xml
+C:\Users\detro\OneDrive\Рабочий стол\Разработка\Noise-Audio-Streaming\Noise\obj\Debug\Noise.csproj.CopyComplete
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MainWindow.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MainWindow.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MusicPlatform.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\RegisterWindow.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\App.g.cs
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise_MarkupCompile.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise_MarkupCompile.lref
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.exe
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.pdb
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Noise.exe.config
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Noise.exe
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Noise.pdb
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fetisov\Desktop\Noise\Noise\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\App.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\MusicPlatform.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\RegisterWindow.baml
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.g.resources
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.Properties.Resources.resources
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.GenerateResource.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.CoreCompileInputs.cache
+C:\Users\Fetisov\Desktop\Noise\Noise\obj\Debug\Noise.csproj.CopyComplete
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Noise.exe.config
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Noise.exe
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Noise.pdb
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Newtonsoft.Json.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Newtonsoft.Json.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.csproj.SuggestedBindingRedirects.cache
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainWindow.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Resources\lang.ru-RU.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MainWindow.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MusicPlatform.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\RegisterWindow.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\App.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise_MarkupCompile.cache
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise_MarkupCompile.lref
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\App.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\MusicPlatform.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\RegisterWindow.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.g.resources
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.Properties.Resources.resources
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.csproj.GenerateResource.cache
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.csproj.CoreCompileInputs.cache
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.csproj.CopyComplete
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.exe
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Noise.pdb
+J:\Files\GitHub\Noise\Noise\bin\Debug\Noise.exe.config
+J:\Files\GitHub\Noise\Noise\bin\Debug\Noise.exe
+J:\Files\GitHub\Noise\Noise\bin\Debug\Noise.pdb
+J:\Files\GitHub\Noise\Noise\bin\Debug\Newtonsoft.Json.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\Newtonsoft.Json.xml
+J:\Files\GitHub\Noise\Noise\obj\Debug\MainWindow.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Resources\lang.ru-RU.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\MainWindow.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\MusicPlatform.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\RegisterWindow.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\App.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise_MarkupCompile.cache
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise_MarkupCompile.lref
+J:\Files\GitHub\Noise\Noise\obj\Debug\App.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\MusicPlatform.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\RegisterWindow.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.g.resources
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.Properties.Resources.resources
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csproj.GenerateResource.cache
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csproj.CoreCompileInputs.cache
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csproj.CopyComplete
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.exe
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.pdb
+J:\Files\GitHub\Noise\Noise\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Buffers.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Memory.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Numerics.Vectors.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Text.Encodings.Web.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Text.Json.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Threading.Tasks.Extensions.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.ValueTuple.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Buffers.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Memory.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Numerics.Vectors.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Text.Encodings.Web.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Text.Json.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Threading.Tasks.Extensions.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.ValueTuple.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Buffers.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Memory.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Text.Json.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.ValueTuple.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Buffers.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Memory.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Text.Json.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.ValueTuple.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.pdb
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.Asio.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.Core.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.Midi.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.Wasapi.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.WinForms.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.WinMM.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.AccessControl.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\NAudio.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.AccessControl.xml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\bin\Debug\System.Security.Principal.Windows.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\Microsoft.Win32.Registry.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.Asio.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.Core.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.Midi.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.Wasapi.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.WinForms.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.WinMM.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Security.AccessControl.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Security.Principal.Windows.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.dll
+J:\Files\GitHub\Noise\Noise\bin\Debug\Microsoft.Win32.Registry.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\NAudio.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Security.AccessControl.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\System.Security.Principal.Windows.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.pdb
+J:\Files\GitHub\Noise\Noise\bin\Debug\WpfAnimatedGif.xml
+J:\Files\GitHub\Noise\Noise\bin\Debug\XamlAnimatedGif.pdb
+J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\ButtonStyles.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\MenuStyles.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\DataGridStyle.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ButtonStyles.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\DataGridStyle.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\MenuStyles.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ColorPallete.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csprojAssemblyReference.cache
+J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\ColorPallete.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Studio.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\ArtistInfo.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\TextStyles.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ComboBoxStyle.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\CreateArtist.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\CreateArtist.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\EditArtist.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\EditArtist.baml

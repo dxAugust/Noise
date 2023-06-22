@@ -65,6 +65,8 @@
     <v:String x:Key="genre_mashup">Mashup</v:String>    
     <!---->
 
+    <v:String x:Key="createButtonLabel">Create artist card</v:String>
+    
     <v:String x:Key="uploadSongButton">Upload song</v:String>
     <v:String x:Key="editSongButton">Edit song</v:String>
     <v:String x:Key="thumbnailUpload">Drop or click to upload thumbnail</v:String>

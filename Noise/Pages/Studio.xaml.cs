@@ -67,6 +67,8 @@ namespace Noise.MainPages
         {
             ServerResponse serverResponse = await ServerAPI.fetchSongByArtistUID(Config.userInfo.id);
 
+            Console.WriteLine(serverResponse.statusCode);
+
             try
             {
                 if (serverResponse.statusCode == 200)
@@ -99,9 +101,10 @@ namespace Noise.MainPages
                     }
 
                     SongsList.ItemsSource = songList.OrderBy(song => song.publicationDate).ToList();
-                } else
-                {
-
+                } 
+                
+                if (serverResponse.statusCode == 506) { 
+                    NavigationService.Navigate(new CreateArtist());
                 }
             } catch (Exception e) {
 
