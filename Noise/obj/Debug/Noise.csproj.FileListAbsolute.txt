@@ -237,3 +237,7 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\So
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\TextStyles.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Styles\ComboBoxStyle.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\CreateArtist.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\EditArtist.g.cs
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\CreateArtist.baml
+C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\EditArtist.baml

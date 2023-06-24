@@ -13,7 +13,7 @@ namespace Noise.Client
         public string username { get; set; }
         public string description { get; set; }
         public string location { get; set; }
-        public string genre { get; set; }
+        public int genre { get; set; }
         public string banner { get; set; }
     }
 }

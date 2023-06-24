@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using Noise.Client;
+using Noise.MainPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,6 +108,7 @@ namespace Noise.Pages
             if (dlg.ShowDialog() == true)
             {
                 thumbnailPreview.Source = new BitmapImage(new Uri(dlg.FileName));
+                thumbnailUri = dlg.FileName;
                 thumbDropArea.Child = thumbnailPreview;
             }
         }
@@ -120,8 +122,28 @@ namespace Noise.Pages
             if (dlg.ShowDialog() == true)
             {
                 melodyIcon.Source = new BitmapImage(new Uri("/Assets/icon-music-green.png", UriKind.RelativeOrAbsolute));
+                melodyUri = dlg.FileName;
                 melodyTooltip.Text = dlg.FileName;
             }
+        }
+
+        private async void uploadSong(UploadData songUploadData)
+        {
+            ServerResponse serverResponse = await ServerAPI.uploadSong(songUploadData);
+
+            Console.WriteLine("UPLOADING SONG DATA");
+
+            if (serverResponse.statusCode == 200)
+            {
+                NavigationService.Navigate(new Studio());
+            } else if (serverResponse.statusCode == 503) {
+                uploadErrorText.Content = (string)Application.Current.Resources["errorUpload"];
+            }
+        }
+
+        private async void editSong(UploadData songEditData)
+        {
+
         }
 
         private void UploadButton_Click(object sender, RoutedEventArgs e)
@@ -136,9 +158,13 @@ namespace Noise.Pages
                     {
                         songName = songTitleBox.Text,
                         songGenreId = songGenreList.SelectedIndex,
+                        thumbnailPath = thumbnailUri,
+                        songPath = melodyUri,
                     };
 
-
+                    uploadSong(songUploadData);
+                } else {
+                    uploadErrorText.Content = (string)Application.Current.Resources["errorEmptyValuesUpload"];
                 }
             } else
             {
@@ -150,9 +176,13 @@ namespace Noise.Pages
                     {
                         songName = songTitleBox.Text,
                         songGenreId = songGenreList.SelectedIndex,
+                        thumbnailPath = thumbnailUri,
+                        songPath = melodyUri,
                     };
 
-
+                    editSong(songUploadData);
+                } else {
+                    uploadErrorText.Content = (string)Application.Current.Resources["errorEmptyValuesUpload"];
                 }
             }
         }

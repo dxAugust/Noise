@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Security.Policy;
 using System.Text;
@@ -184,16 +185,30 @@ namespace Noise.Client
 
         public static async Task<ServerResponse> uploadSong(UploadData songUploadData)
         {
-            var response = await client.GetAsync(Config.apiURL + "songs/upload/");
-            var responseString = await response.Content.ReadAsStringAsync();
-
-            ServerResponse serverResponse = new ServerResponse()
+            using (var multipartFormContent = new MultipartFormDataContent())
             {
-                statusCode = (int)response.StatusCode,
-                response = responseString,
-            };
+                multipartFormContent.Add(new StringContent(Config.userInfo.session_token), name: "session_token");
+                multipartFormContent.Add(new StringContent("" + songUploadData.songGenreId), name: "genre_id");
 
-            return serverResponse;
+                var thumbStreamContent = new StreamContent(File.OpenRead(songUploadData.thumbnailPath));
+                thumbStreamContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                multipartFormContent.Add(thumbStreamContent, name: "thumbnail", fileName: "thumbnail.png");
+
+                var songStreamContent = new StreamContent(File.OpenRead(songUploadData.songPath));
+                songStreamContent.Headers.ContentType = new MediaTypeHeaderValue("audio/mp3");
+                multipartFormContent.Add(songStreamContent, name: "song", fileName: "song.mp3");
+
+                var response = await client.PostAsync(Config.apiURL + "songs/upload/", multipartFormContent);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                ServerResponse serverResponse = new ServerResponse()
+                {
+                    statusCode = (int)response.StatusCode,
+                    response = responseString,
+                };
+
+                return serverResponse;
+            }
         }
     }
 }

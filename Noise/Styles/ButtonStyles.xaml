@@ -52,6 +52,31 @@
         </Setter>
     </Style>
 
+    <Style x:Key="createButton" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                            Name="buttonBorder"    
+                            CornerRadius="20"
+                            Background="{DynamicResource ThirdAppColor}"
+                            BorderThickness="1">
+                        <ContentPresenter
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="{TemplateBinding Padding}" ></ContentPresenter>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="buttonBorder" Value="#2d8d00"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="transparentButton" TargetType="Button">
         <Setter Property="Template">
             <Setter.Value>
@@ -102,7 +127,7 @@
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Height" Value="32" />
         <Setter Property="Width" Value="138" />
-        
+
         <Setter Property="Foreground" Value="#FFF" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">

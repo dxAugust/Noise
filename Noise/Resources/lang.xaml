@@ -74,5 +74,8 @@
     
     <v:String x:Key="msgSongFileExist">Melody file on server</v:String>
     
+    <v:String x:Key="errorEmptyValuesUpload">All fields must be filled</v:String>
+    <v:String x:Key="errorUpload">Failed to upload a song to server</v:String>
+    
     <!---->
 </ResourceDictionary>

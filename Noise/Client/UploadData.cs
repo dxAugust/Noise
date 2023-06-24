@@ -10,5 +10,7 @@ namespace Noise.Client
     {
         public string songName { get; set; }
         public int songGenreId { get; set; }
+        public string thumbnailPath { get; set; }
+        public string songPath { get; set;}
     }
 }

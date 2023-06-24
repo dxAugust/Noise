@@ -48,7 +48,7 @@ namespace Noise.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new EditArtist(null));
+            NavigationService.Navigate(new EditArtist(null));
         }
     }
 }
