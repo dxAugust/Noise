@@ -188,6 +188,7 @@ namespace Noise.Client
             using (var multipartFormContent = new MultipartFormDataContent())
             {
                 multipartFormContent.Add(new StringContent(Config.userInfo.session_token), name: "session_token");
+                multipartFormContent.Add(new StringContent("" + songUploadData.songName), name: "song_name");
                 multipartFormContent.Add(new StringContent("" + songUploadData.songGenreId), name: "genre_id");
 
                 var thumbStreamContent = new StreamContent(File.OpenRead(songUploadData.thumbnailPath));
@@ -209,6 +210,63 @@ namespace Noise.Client
 
                 return serverResponse;
             }
+        }
+
+        public static async Task<ServerResponse> editSong(UploadData songUploadData, int songId)
+        {
+            using (var multipartFormContent = new MultipartFormDataContent())
+            {
+                multipartFormContent.Add(new StringContent(Config.userInfo.session_token), name: "session_token");
+                multipartFormContent.Add(new StringContent("" + songId), name: "song_id");
+                multipartFormContent.Add(new StringContent("" + songUploadData.songName), name: "song_name");
+                multipartFormContent.Add(new StringContent("" + songUploadData.songGenreId), name: "genre_id");
+
+                if (songUploadData.thumbnailPath.Length != 0)
+                {
+                    var thumbStreamContent = new StreamContent(File.OpenRead(songUploadData.thumbnailPath));
+                    thumbStreamContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                    multipartFormContent.Add(thumbStreamContent, name: "thumbnail", fileName: "thumbnail.png");
+                }
+
+                if (songUploadData.songPath.Length != 0)
+                {
+                    var songStreamContent = new StreamContent(File.OpenRead(songUploadData.songPath));
+                    songStreamContent.Headers.ContentType = new MediaTypeHeaderValue("audio/mp3");
+                    multipartFormContent.Add(songStreamContent, name: "song", fileName: "song.mp3");
+                }
+
+                var response = await client.PostAsync(Config.apiURL + "songs/edit/", multipartFormContent);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                ServerResponse serverResponse = new ServerResponse()
+                {
+                    statusCode = (int)response.StatusCode,
+                    response = responseString,
+                };
+
+                return serverResponse;
+            }
+        }
+
+        public static async Task<ServerResponse> deleteSong(int songId)
+        {
+            var userData = new Dictionary<string, string>
+            {
+                { "session_token", Config.userInfo.session_token },
+                { "song_id", "" + songId },
+            };
+
+            var data = new FormUrlEncodedContent(userData);
+            var response = await client.PostAsync(Config.apiURL + "songs/delete", data);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
         }
     }
 }

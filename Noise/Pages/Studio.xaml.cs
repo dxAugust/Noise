@@ -122,6 +122,11 @@ namespace Noise.MainPages
             NavigationService.Navigate(new SongUpload(null));
         }
 
+        private void EditArtist_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EditArtist(null));
+        }
+
         private async void openEditTab(songItem songItem)
         {
             ServerResponse serverResponse = await ServerAPI.fetchSongById(songItem.song_id);

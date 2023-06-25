@@ -36,6 +36,7 @@ namespace Noise.Pages
             InitializeComponent();
 
             uploadErrorText.Content = "";
+            deleteButton.Visibility = Visibility.Hidden;
 
             double time = 2;
             var opacity = new DoubleAnimation
@@ -76,6 +77,8 @@ namespace Noise.Pages
                 melodyTooltip.Text = (string)Application.Current.Resources["msgSongFileExist"];
 
                 uploadButton.Content = (string)Application.Current.Resources["editSongButton"];
+
+                deleteButton.Visibility = Visibility.Visible;
             }
         }
 
@@ -103,7 +106,7 @@ namespace Noise.Pages
 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".png";
-            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+            dlg.Filter = "Image Files|*.png;*.jpeg;*.gif|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
 
             if (dlg.ShowDialog() == true)
             {
@@ -117,7 +120,7 @@ namespace Noise.Pages
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".mp3";
-            dlg.Filter = "MP3 Files (*.mp3)|*.mp3|Wave Files (*.wav)|*.wav";
+            dlg.Filter = "Audio Files|*.mp3;*.wav|MP3 Files (*.mp3)|*.mp3|Wave Files (*.wav)|*.wav";
 
             if (dlg.ShowDialog() == true)
             {
@@ -130,9 +133,6 @@ namespace Noise.Pages
         private async void uploadSong(UploadData songUploadData)
         {
             ServerResponse serverResponse = await ServerAPI.uploadSong(songUploadData);
-
-            Console.WriteLine("UPLOADING SONG DATA");
-
             if (serverResponse.statusCode == 200)
             {
                 NavigationService.Navigate(new Studio());
@@ -141,9 +141,40 @@ namespace Noise.Pages
             }
         }
 
+        private async void editSong(UploadData songUploadData, int songId)
+        {
+            ServerResponse serverResponse = await ServerAPI.editSong(songUploadData, songId);
+            if (serverResponse.statusCode == 200)
+            {
+                NavigationService.Navigate(new Studio());
+            }
+            else if (serverResponse.statusCode == 503)
+            {
+                uploadErrorText.Content = (string)Application.Current.Resources["errorDelete"];
+            }
+        }
+
+        private async void deleteSong(int songId)
+        {
+            ServerResponse serverResponse = await ServerAPI.deleteSong(songId);
+            if (serverResponse.statusCode == 200)
+            {
+                NavigationService.Navigate(new Studio());
+            }
+            else if (serverResponse.statusCode == 503)
+            {
+                uploadErrorText.Content = (string)Application.Current.Resources["errorDelete"];
+            }
+        }
+
         private async void editSong(UploadData songEditData)
         {
+            editSong(songEditData, songData.id);
+        }
 
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            deleteSong(songData.id);
         }
 
         private void UploadButton_Click(object sender, RoutedEventArgs e)
@@ -168,9 +199,9 @@ namespace Noise.Pages
                 }
             } else
             {
-                if (melodyUri.Length != 0
-                && thumbnailUri.Length != 0
-                && songTitleBox.Text.Length != 0)
+                if ((melodyUri.Length != 0
+                || thumbnailUri.Length != 0)
+                || songTitleBox.Text.Length != 0)
                 {
                     UploadData songUploadData = new UploadData()
                     {
@@ -184,6 +215,38 @@ namespace Noise.Pages
                 } else {
                     uploadErrorText.Content = (string)Application.Current.Resources["errorEmptyValuesUpload"];
                 }
+            }
+        }
+
+        private void DockPanel_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                Image thumbnailPreview = new Image();
+                thumbnailPreview.Width = 128;
+                thumbnailPreview.Height = 128;
+
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                thumbnailPreview.Source = new BitmapImage(new Uri(files[0]));
+                thumbnailUri = files[0];
+                thumbDropArea.Child = thumbnailPreview;
+            }
+        }
+
+        private void musicDropArea_PreviewDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                Image thumbnailPreview = new Image();
+                thumbnailPreview.Width = 128;
+                thumbnailPreview.Height = 128;
+
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                melodyIcon.Source = new BitmapImage(new Uri("/Assets/icon-music-green.png", UriKind.RelativeOrAbsolute));
+                melodyUri = files[0];
+                melodyTooltip.Text = files[0];
             }
         }
     }
