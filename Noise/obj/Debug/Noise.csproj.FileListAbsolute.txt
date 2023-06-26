@@ -223,7 +223,6 @@ C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Di
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.g.cs
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.baml
 C:\Users\detro\OneDrive\Документы\GitHub\Noise\Noise\obj\Debug\Pages\Studio.baml
-J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csprojAssemblyReference.cache
 J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\ColorPallete.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\DiscoverSongs.g.cs
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Studio.g.cs
@@ -249,3 +248,4 @@ J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.g.cs
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\CreateArtist.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\EditArtist.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache

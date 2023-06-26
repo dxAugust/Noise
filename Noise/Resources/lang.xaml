@@ -80,6 +80,11 @@
     <v:String x:Key="errorEmptyValuesUpload">All fields must be filled</v:String>
     <v:String x:Key="errorUpload">Failed to upload a song to server</v:String>
     <v:String x:Key="errorDelete">Failed to delete song</v:String>
-    
     <!---->
+    
+    <!-- Edit artist page -->
+    <v:String x:Key="artistNamePlaceholder">Name:</v:String>
+    <v:String x:Key="artistDescriptionPlaceholder">Description:</v:String>
+    <!---->
+    
 </ResourceDictionary>
