@@ -117,14 +117,27 @@ namespace Noise.MainPages
 
         }
 
+        public event EventHandler pageChange;
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
+            pageChange(sender, e);
             NavigationService.Navigate(new SongUpload(null));
         }
 
         private void EditArtist_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EditArtist(null));
+            pageChange(sender, e);
+            editArtist();
+        }
+
+        private async void editArtist()
+        {
+            ServerResponse serverResponse = await ServerAPI.fetchArtistByBelong(Config.userInfo.id);
+
+            if (serverResponse.statusCode == 200)
+            {
+                NavigationService.Navigate(new EditArtist(JsonConvert.DeserializeObject<Artist>(serverResponse.response)));
+            }
         }
 
         private async void openEditTab(songItem songItem)
@@ -137,6 +150,7 @@ namespace Noise.MainPages
             }
         }
 
+        
         private void SongsList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             if (SongsList.SelectedItems.Count > 0)
@@ -144,6 +158,7 @@ namespace Noise.MainPages
                 foreach (var song in SongsList.SelectedItems)
                 {
                     songItem songItem = song as songItem;
+                    pageChange(sender, e);
                     openEditTab(songItem);
                 }
             }

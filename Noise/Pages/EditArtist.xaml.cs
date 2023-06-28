@@ -1,4 +1,5 @@
 ﻿using Noise.Client;
+using Noise.MainPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Noise.Client.ServerAPI;
 
 namespace Noise.Pages
 {
@@ -22,9 +24,12 @@ namespace Noise.Pages
     /// </summary>
     public partial class EditArtist : Page
     {
+        Artist editInfo = new Artist();
         public EditArtist(Artist artistInfo)
         {
             InitializeComponent();
+
+            errorText.Content = "";
 
             double time = 2;
             var opacity = new DoubleAnimation
@@ -48,9 +53,28 @@ namespace Noise.Pages
 
             if (artistInfo != null)
             {
+                editInfo = artistInfo;
                 usernameBox.Text = artistInfo.username;
                 descriptionBox.Text = artistInfo.description;
             }
+        }
+        private async void editArtist(Artist artistInfo)
+        {
+            ServerResponse serverResponse = await ServerAPI.setArtistInfo(artistInfo, "");
+            if (serverResponse.statusCode == 200)
+            {
+                NavigationService.Navigate(new Studio());
+            } else if (serverResponse.statusCode == 504)
+            {
+                errorText.Content = (string)Application.Current.Resources["errorOccupiedNick"];
+            }
+        }
+
+        private void artistButton_Click(object sender, RoutedEventArgs e)
+        {
+            editInfo.username = usernameBox.Text;
+            editInfo.description = descriptionBox.Text;
+            editArtist(editInfo);
         }
     }
 }

@@ -113,6 +113,20 @@ namespace Noise.Client
             return serverResponse;
         }
 
+        public static async Task<ServerResponse> searchSong(string term)
+        {
+            var response = await client.GetAsync(Config.apiURL + "songs/search/" + term);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
         public static async Task<ServerResponse> getArtistInfoByName(string artistName)
         {
             var response = await client.GetAsync(Config.apiURL + "artist/fetch/name/" + artistName);
@@ -125,6 +139,35 @@ namespace Noise.Client
             };
 
             return serverResponse;
+        }
+
+        public static async Task<ServerResponse> setArtistInfo(Artist artistInfo, string bannerPath)
+        {
+            using (var multipartFormContent = new MultipartFormDataContent())
+            {
+                multipartFormContent.Add(new StringContent(Config.userInfo.session_token), name: "session_token");
+                multipartFormContent.Add(new StringContent(artistInfo.username), name: "username");
+                multipartFormContent.Add(new StringContent(artistInfo.description), name: "description");
+                multipartFormContent.Add(new StringContent("" + artistInfo.genre), name: "genre_id");
+
+                if (bannerPath.Length != 0)
+                {
+                    var thumbStreamContent = new StreamContent(File.OpenRead(bannerPath));
+                    thumbStreamContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                    multipartFormContent.Add(thumbStreamContent, name: "thumbnail", fileName: "thumbnail.png");
+                }
+
+                var response = await client.PostAsync(Config.apiURL + "artist/edit/", multipartFormContent);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                ServerResponse serverResponse = new ServerResponse()
+                {
+                    statusCode = (int)response.StatusCode,
+                    response = responseString,
+                };
+
+                return serverResponse;
+            }
         }
 
         public static async Task<ServerResponse> getLastRelease(int artistId)
@@ -144,6 +187,20 @@ namespace Noise.Client
         public static async Task<ServerResponse> fetchSongByArtistUID(int userid)
         {
             var response = await client.GetAsync(Config.apiURL + "studio/songlist/" + userid);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
+        public static async Task<ServerResponse> fetchArtistByBelong(int userid)
+        {
+            var response = await client.GetAsync(Config.apiURL + "artist/fetch/userid/" + userid);
             var responseString = await response.Content.ReadAsStringAsync();
 
             ServerResponse serverResponse = new ServerResponse()

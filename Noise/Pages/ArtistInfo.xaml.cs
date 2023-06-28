@@ -23,6 +23,7 @@ namespace Noise.Pages.StudioPages
     /// </summary>
     public partial class ArtistInfo : Page
     {
+        Song lastReleaseSong;
         public ArtistInfo(Artist artistInfo)
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace Noise.Pages.StudioPages
         public async void setupLastRelease(Artist artistInfo)
         {
             ServerResponse serverResponse = await ServerAPI.getLastRelease(artistInfo.id);
-            Song lastReleaseSong = JsonConvert.DeserializeObject<Song>(serverResponse.response);
+            lastReleaseSong = JsonConvert.DeserializeObject<Song>(serverResponse.response);
 
             Uri thumbURI = new Uri("./Assets/music_no_thumbnail.png", UriKind.Relative);
             if (lastReleaseSong.thumbnail_path.Length != 0)
@@ -56,6 +57,14 @@ namespace Noise.Pages.StudioPages
 
             lastReleaseName.Content = lastReleaseSong.name;
             lastReleaseDate.Content = songDate;
+        }
+
+        public event EventHandler playingLastRelease;
+        private void lastRelease_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WrapPanel songPanel = new WrapPanel();
+            songPanel.Name = "song_" + lastReleaseSong.id;
+            playingLastRelease(songPanel, e);
         }
     }
 }

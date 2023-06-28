@@ -122,6 +122,22 @@
                                    Foreground="White"></Label>
                         </StackPanel>
                     </Button>
+
+                    <Button 
+                    Style="{DynamicResource menuItem}"
+                    Margin="5" Padding="10"
+                    Foreground="White"
+                    Click="Playlist_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" Width="28" Height="28" 
+                                   Margin="0 0 20 0"
+                                   Source="/Assets/icon-playlists.png"/>
+                            <Label Content="{DynamicResource menuItem3}" 
+                                   FontSize="16px"
+                                   TextOptions.TextRenderingMode="ClearType"
+                                   Foreground="White"></Label>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </Border>
 

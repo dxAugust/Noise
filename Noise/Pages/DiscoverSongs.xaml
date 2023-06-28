@@ -8,10 +8,38 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DiscoverSongs">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.3*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" BorderThickness="10" BorderBrush="#202020" Margin="10">
+            <DockPanel  
+                        Background="#202020">
+                <Image 
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        Source="/Assets/icon-search.png" 
+                        Height="32"/>
+
+                <TextBox 
+                            Background="#202020" 
+                            Foreground="White" 
+                            Height="35"
+                            VerticalContentAlignment="Center" 
+                            BorderThickness="0" 
+                            x:Name="searchBox" 
+                            FontSize="14"
+                            KeyDown="searchBox_KeyDown"
+                            />
+            </DockPanel>
+        </Border>
         <WrapPanel
             Margin="20"
             x:Name="songsList"
-            Orientation="Horizontal">
+            Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
         </WrapPanel>
     </Grid>
 </Page>

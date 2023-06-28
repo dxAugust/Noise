@@ -53,6 +53,7 @@
     <!-- Menu items locale -->
     <v:String x:Key="menuItem1">Home</v:String>
     <v:String x:Key="menuItem2">Studio</v:String>
+    <v:String x:Key="menuItem3">Playlists</v:String>
     <!---->
     
     <!-- Song Editing page -->

@@ -46,7 +46,7 @@ namespace Noise
         public DiscoverSongs discoverSongsPage = new DiscoverSongs();
         public Studio studioPage = new Studio();
 
-        public static WaveOut musicPlayer = new WaveOut();
+        public static WaveOut musicPlayer;
         public static MediaFoundationReader mf;
 
         public bool changingPosition = false;
@@ -96,6 +96,9 @@ namespace Noise
         {
             home = 0,
             studio = 1,
+            playlists = 1,
+
+            other = 3,
         }
         public static Pages currentPage = Pages.home;
 
@@ -162,6 +165,11 @@ namespace Noise
                 mf.TotalTime.Seconds);
 
                 this.playerMax.Text = maxLength;
+
+                Uri pauseURI = new Uri("./Assets/icon-pause.png", UriKind.Relative);
+                BitmapImage pauseImage = new BitmapImage(pauseURI);
+                playButtonImage.BeginAnimation(Image.OpacityProperty, smallOpacity);
+                playButtonImage.Source = pauseImage;
 
                 songsPlayer.BeginAnimation(Grid.MarginProperty, smallPosYAnimation);
                 songsPlayer.BeginAnimation(Grid.OpacityProperty, opacity);
@@ -335,12 +343,35 @@ namespace Noise
                 categoryTitleText.Content = (string)Application.Current.Resources["splashMessage"];
             }
         }
+        private void pageChange(object sender, EventArgs e)
+        {
+            currentPage = Pages.other;
+        }
+
         private void Studio_Click(object sender, RoutedEventArgs e)
         {
             if (currentPage != Pages.studio)
             {
                 currentPage = Pages.studio;
-                mainScreen.Navigate(new Studio());
+
+                Studio studioPage = new Studio();
+                studioPage.pageChange += new EventHandler(pageChange);
+                mainScreen.Navigate(studioPage);
+
+                categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
+                categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
+                categoryTitleText.Content = (string)Application.Current.Resources["studioCategory"];
+            }
+        }
+
+        private void Playlist_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage != Pages.playlists)
+            {
+                currentPage = Pages.playlists;
+
+                Studio studioPage = new Studio();
+                mainScreen.Navigate(studioPage);
 
                 categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
                 categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
@@ -353,10 +384,15 @@ namespace Noise
             ServerResponse serverResponse = await ServerAPI.getArtistInfoByName(artistName);
             if (serverResponse.statusCode == 200)
             {
+                currentPage = Pages.other;
+
                 Artist artist = JsonConvert.DeserializeObject<Artist>(serverResponse.response);
                 mainScreen.BeginAnimation(Frame.MarginProperty, smallPosYAnimation);
                 mainScreen.BeginAnimation(Frame.OpacityProperty, opacity);
-                mainScreen.Navigate(new ArtistInfo(artist));
+
+                ArtistInfo infoPage = new ArtistInfo(artist);
+                infoPage.playingLastRelease += new EventHandler(playSongByIdAsync);
+                mainScreen.Navigate(infoPage);
             }
         }
 

@@ -311,5 +311,11 @@
   <ItemGroup>
     <Resource Include="Assets\icon-music-green.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-playlists.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

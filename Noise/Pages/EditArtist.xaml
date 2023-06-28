@@ -60,6 +60,27 @@
                     </DockPanel>
                 </Border>
             </DockPanel>
+
+            <DockPanel>
+                <Label
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Foreground="Red"
+                    FontSize="16"
+                    Content="Error text will be here"
+                    x:Name="errorText">
+                </Label>
+            </DockPanel>
+            
+            <Grid>
+                <Button
+                    Padding="10"
+                    Content="{DynamicResource editArtistCard}"
+                    Style="{DynamicResource roundButton}"
+                    x:Name="artistButton"
+                    Click="artistButton_Click">
+                </Button>
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 J:\Files\GitHub\Noise\Noise\App.xaml
-16-1296371229
+17-1461174102
 
-241666642352
+25-1800321341
 37921102054
-Pages\CreateArtist.xaml;Pages\DiscoverSongs.xaml;Pages\EditArtist.xaml;Pages\SongUpload.xaml;Pages\Studio.xaml;MainWindow.xaml;MusicPlatform.xaml;Pages\ArtistInfo.xaml;Resources\lang.ru-RU.xaml;RegisterWindow.xaml;Styles\ButtonStyles.xaml;Styles\ColorPallete.xaml;Styles\ComboBoxStyle.xaml;Styles\DataGridStyle.xaml;Styles\MenuStyles.xaml;Styles\TextStyles.xaml;
+Pages\CreateArtist.xaml;Pages\DiscoverSongs.xaml;Pages\EditArtist.xaml;Pages\Playlists.xaml;Pages\SongUpload.xaml;Pages\Studio.xaml;MainWindow.xaml;MusicPlatform.xaml;Pages\ArtistInfo.xaml;Resources\lang.ru-RU.xaml;RegisterWindow.xaml;Styles\ButtonStyles.xaml;Styles\ColorPallete.xaml;Styles\ComboBoxStyle.xaml;Styles\DataGridStyle.xaml;Styles\MenuStyles.xaml;Styles\TextStyles.xaml;
 
-False
+True
 

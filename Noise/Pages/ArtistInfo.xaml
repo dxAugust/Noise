@@ -5,12 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Noise.Pages.StudioPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="800"
       Title="ArtistInfo">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1.4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
 
         <StackPanel>
@@ -62,7 +63,9 @@
                     Content="{DynamicResource releaseLabel}"
                     FontWeight="Bold"/>
 
-            <WrapPanel>
+            <WrapPanel
+                x:Name="lastRelease"
+                PreviewMouseLeftButtonDown="lastRelease_PreviewMouseLeftButtonDown">
                 <Border Width="100" 
                         Height="100" 
                         CornerRadius="15"
