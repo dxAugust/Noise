@@ -30,6 +30,7 @@
 
     <!-- Data Grid strings -->
     <v:String x:Key="nameCollumn">Name</v:String>
+    <v:String x:Key="songsAmountColumn">Songs amount</v:String>
     <v:String x:Key="imageCollumn">Thumbnail</v:String>
     <v:String x:Key="playsCollumn">Plays</v:String>
     <v:String x:Key="pubCollumn">Publication date</v:String>
@@ -54,6 +55,9 @@
     <v:String x:Key="menuItem1">Home</v:String>
     <v:String x:Key="menuItem2">Studio</v:String>
     <v:String x:Key="menuItem3">Playlists</v:String>
+
+    <v:String x:Key="menuCategory1">Explore</v:String>
+    <v:String x:Key="menuCategory2">Library</v:String>
     <!---->
     
     <!-- Song Editing page -->
@@ -72,13 +76,15 @@
     <v:String x:Key="uploadSongButton">Upload song</v:String>
     <v:String x:Key="editSongButton">Edit song</v:String>
     <v:String x:Key="deleteSongButton">Delete song</v:String>
-    
+
+    <v:String x:Key="bannerUpload">Drop or click to upload banner</v:String>
     <v:String x:Key="thumbnailUpload">Drop or click to upload thumbnail</v:String>
     <v:String x:Key="songUpload">Drop or click to upload melody</v:String>
     
     <v:String x:Key="msgSongFileExist">Melody file on server</v:String>
     
     <v:String x:Key="errorEmptyValuesUpload">All fields must be filled</v:String>
+    <v:String x:Key="errorName">Name is required field</v:String>
     <v:String x:Key="errorUpload">Failed to upload a song to server</v:String>
     <v:String x:Key="errorDelete">Failed to delete song</v:String>
     <!---->
@@ -87,5 +93,13 @@
     <v:String x:Key="artistNamePlaceholder">Name:</v:String>
     <v:String x:Key="artistDescriptionPlaceholder">Description:</v:String>
     <!---->
+
+    <v:String x:Key="nothingFound">Nothing found :(</v:String>
     
+    <!-- Playlists -->
+    <v:String x:Key="addPlaylistButton">Add playlist</v:String>
+    <v:String x:Key="createPlaylistButton">Create playlist</v:String>
+    <v:String x:Key="editPlaylistButton">Edit playlist</v:String>
+    <!---->
+
 </ResourceDictionary>

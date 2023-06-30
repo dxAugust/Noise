@@ -141,6 +141,15 @@
     <Compile Include="Pages\EditArtist.xaml.cs">
       <DependentUpon>EditArtist.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EditPlaylist.xaml.cs">
+      <DependentUpon>EditPlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Playlists.xaml.cs">
+      <DependentUpon>Playlists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlaylistSongs.xaml.cs">
+      <DependentUpon>PlaylistSongs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SongUpload.xaml.cs">
       <DependentUpon>SongUpload.xaml</DependentUpon>
     </Compile>
@@ -165,6 +174,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EditArtist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditPlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Playlists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlaylistSongs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\DataGridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\MenuItems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -316,6 +341,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\icon-playlists.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon-plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

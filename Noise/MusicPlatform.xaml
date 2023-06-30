@@ -15,7 +15,8 @@
         Width="1000" 
         Height="600" 
         MouseLeftButtonDown="dragAWindow"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
     <Border CornerRadius="25" 
             VerticalAlignment="Stretch" 
             Background="{DynamicResource PrimaryAppColor}"
@@ -48,49 +49,56 @@
                     x:Name="categoryTitleText"
                     Content="{DynamicResource splashMessage}"/>
             </StackPanel>
-            
+
             <StackPanel  
                         VerticalAlignment="Top" 
                         HorizontalAlignment="Right"
                         Grid.Column="2" Grid.Row="0"
                         x:Name="profilePanel" Margin="0 40 0 0">
-                <Border 
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    CornerRadius="10"
-                    Margin="5 5 20 5"
-                    Padding="5">
-                    <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center">
-                        <Border Width="32" 
-                            Height="32" 
+                <MenuItem
+                    x:Name="profileName"
+                    Style="{DynamicResource profileMenu}"
+                    MouseDoubleClick="profileName_MouseDoubleClick">
+                    <MenuItem.Header>
+                        <DockPanel>
+                            <Border 
+                            Width="32" 
+                            Height="32"
                             CornerRadius="15">
-                            <Border.Background>
-                                <ImageBrush 
+                                <Border.Background>
+                                    <ImageBrush 
                                     RenderOptions.BitmapScalingMode="HighQuality"
                                     Stretch="Fill" 
                                     ImageSource="./Assets/avatar.png"/>
-                            </Border.Background>
-                        </Border>
-                        <Label
-                            FontFamily="Segoe UI" FontSize="16px" 
-                            Foreground="White" 
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            x:Name="profileName">USERNAME</Label>
-                    </StackPanel>
-                </Border>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock
+                                FontSize="16px" 
+                                Foreground="White" 
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center">
+                                USERNAME
+                            </TextBlock>
+                        </DockPanel>
+                    </MenuItem.Header>
+                </MenuItem>
             </StackPanel>
 
             <Border 
                     Background="#181818"
                     x:Name="programMenu"
-                    Grid.RowSpan="3" Grid.Column="0"
-                    CornerRadius="25 0 0 0">
+                    Grid.RowSpan="3"
+                    Grid.Column="0"
+                    CornerRadius="25 0 0 0"
+                    Margin="30 0 0 0">
                 <StackPanel
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
+                    <Label 
+                        Foreground="#505050"
+                        FontSize="14"
+                        Content="{DynamicResource menuCategory1}"></Label>
+                    
                     <Button 
                     Style="{DynamicResource menuItem}"
                     Margin="5" Padding="10"
@@ -107,6 +115,10 @@
                         </StackPanel>
                     </Button>
 
+                    <Label 
+                        Foreground="#505050"
+                        FontSize="14"
+                        Content="{DynamicResource menuCategory2}"></Label>
                     <Button 
                     Style="{DynamicResource menuItem}"
                     Margin="5" Padding="10"
@@ -130,7 +142,7 @@
                     Click="Playlist_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image RenderOptions.BitmapScalingMode="HighQuality" Width="28" Height="28" 
-                                   Margin="0 0 20 0"
+                                   Margin="0 0 10 0"
                                    Source="/Assets/icon-playlists.png"/>
                             <Label Content="{DynamicResource menuItem3}" 
                                    FontSize="16px"

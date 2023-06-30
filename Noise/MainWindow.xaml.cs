@@ -27,6 +27,7 @@ namespace Noise
     public class data
     {
         public string session_token { get; set; }
+        public int volume { get; set; }
     }
 
     public partial class MainWindow : Window

@@ -175,104 +175,120 @@ namespace Noise.MainPages
 
             try
             {
-                var discoverSongs = JArray.Parse(serverResponse.response).OfType<JObject>();
+                var searchResults = JArray.Parse(serverResponse.response).OfType<JObject>();
 
-                foreach (var song in discoverSongs)
+
+                if (searchResults.Count() != 0)
                 {
-                    Uri thumbURI = new Uri("./Assets/music_no_thumbnail.png", UriKind.Relative);
-
-                    if (song["thumbnail_path"].ToString().Length != 0)
+                    foreach (var song in searchResults)
                     {
-                        thumbURI = new Uri(Config.serverURL + "/" + song["thumbnail_path"].ToString(), UriKind.RelativeOrAbsolute);
+                        Uri thumbURI = new Uri("./Assets/music_no_thumbnail.png", UriKind.Relative);
+
+                        if (song["thumbnail_path"].ToString().Length != 0)
+                        {
+                            thumbURI = new Uri(Config.serverURL + "/" + song["thumbnail_path"].ToString(), UriKind.RelativeOrAbsolute);
+                        }
+                        BitmapImage thumbnailImage = new BitmapImage(thumbURI);
+
+                        var thumbnailPic = new ImageBrush
+                        {
+                            ImageSource = thumbnailImage,
+                            Stretch = Stretch.Fill,
+                        };
+                        RenderOptions.SetBitmapScalingMode(thumbnailPic, BitmapScalingMode.HighQuality);
+
+                        var thumbnailBorder = new Border
+                        {
+                            Width = 150,
+                            Height = 150,
+                            CornerRadius = new CornerRadius(10),
+                        };
+                        thumbnailBorder.Background = thumbnailPic;
+
+                        Label songName = new Label
+                        {
+                            Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF")),
+                            FontWeight = FontWeights.Bold,
+                            FontSize = 20.0,
+                            Content = song["name"].ToString(),
+                        };
+
+                        Label artistTitle = new Label
+                        {
+                            Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9F9F9F")),
+                            FontWeight = FontWeights.Bold,
+                            FontSize = 14.0,
+                            Content = song["artist_name"].ToString(),
+                        };
+
+                        WrapPanel songPanel = new WrapPanel
+                        {
+                            Width = 150,
+                            Height = 250,
+                            Orientation = Orientation.Vertical,
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            Margin = new Thickness(20),
+                            Name = "song_" + song["id"].ToString(),
+                        };
+
+                        Uri playURI = new Uri("/Assets/icon-play.png", UriKind.Relative);
+                        Uri playsURI = new Uri("/Assets/icon-plays.png", UriKind.Relative);
+                        BitmapImage playImg = new BitmapImage(playURI);
+                        BitmapImage playsImg = new BitmapImage(playsURI);
+
+                        WrapPanel playPanel = new WrapPanel
+                        {
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            VerticalAlignment = VerticalAlignment.Center,
+                            Orientation = Orientation.Vertical,
+                        };
+                        Image playsImage = new Image
+                        {
+                            Width = 20,
+                            Height = 20,
+                            Margin = new Thickness(0, 20, 0, 0),
+                            Source = playsImg,
+                            Opacity = 0.0,
+                        };
+                        RenderOptions.SetBitmapScalingMode(playsImage, BitmapScalingMode.HighQuality);
+
+                        Label playsLabel = new Label
+                        {
+                            Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9F9F9F")),
+                            HorizontalContentAlignment = HorizontalAlignment.Center,
+                            FontSize = 12.0,
+                            Content = song["plays"].ToString(),
+                            Opacity = 0.0,
+                        };
+
+                        playPanel.Children.Add(playsImage);
+                        playPanel.Children.Add(playsLabel);
+
+                        thumbnailBorder.Child = playPanel;
+
+                        songPanel.AddHandler(WrapPanel.MouseEnterEvent, new RoutedEventHandler(songPanel_Hover));
+                        songPanel.AddHandler(WrapPanel.MouseLeaveEvent, new RoutedEventHandler(songPanel_UnHover));
+                        songPanel.AddHandler(WrapPanel.MouseDownEvent, new RoutedEventHandler(playSong_Click));
+
+                        songPanel.Children.Add(thumbnailBorder);
+                        songPanel.Children.Add(songName);
+                        songPanel.Children.Add(artistTitle);
+
+                        songsList.Children.Add(songPanel);
                     }
-                    BitmapImage thumbnailImage = new BitmapImage(thumbURI);
-
-                    var thumbnailPic = new ImageBrush
+                } else
+                {
+                    TextBlock nothingFoundText = new TextBlock()
                     {
-                        ImageSource = thumbnailImage,
-                        Stretch = Stretch.Fill,
+                        Foreground = (SolidColorBrush)Application.Current.Resources["SecondaryTextColor"],
+                        FontSize = 42.0,
                     };
-                    RenderOptions.SetBitmapScalingMode(thumbnailPic, BitmapScalingMode.HighQuality);
+                    TextOptions.SetTextRenderingMode(nothingFoundText, TextRenderingMode.ClearType);
 
-                    var thumbnailBorder = new Border
-                    {
-                        Width = 150,
-                        Height = 150,
-                        CornerRadius = new CornerRadius(10),
-                    };
-                    thumbnailBorder.Background = thumbnailPic;
-
-                    Label songName = new Label
-                    {
-                        Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF")),
-                        FontWeight = FontWeights.Bold,
-                        FontSize = 20.0,
-                        Content = song["name"].ToString(),
-                    };
-
-                    Label artistTitle = new Label
-                    {
-                        Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9F9F9F")),
-                        FontWeight = FontWeights.Bold,
-                        FontSize = 14.0,
-                        Content = song["artist_name"].ToString(),
-                    };
-
-                    WrapPanel songPanel = new WrapPanel
-                    {
-                        Width = 150,
-                        Height = 250,
-                        Orientation = Orientation.Vertical,
-                        HorizontalAlignment = HorizontalAlignment.Center,
-                        Margin = new Thickness(20),
-                        Name = "song_" + song["id"].ToString(),
-                    };
-
-                    Uri playURI = new Uri("/Assets/icon-play.png", UriKind.Relative);
-                    Uri playsURI = new Uri("/Assets/icon-plays.png", UriKind.Relative);
-                    BitmapImage playImg = new BitmapImage(playURI);
-                    BitmapImage playsImg = new BitmapImage(playsURI);
-
-                    WrapPanel playPanel = new WrapPanel
-                    {
-                        HorizontalAlignment = HorizontalAlignment.Center,
-                        VerticalAlignment = VerticalAlignment.Center,
-                        Orientation = Orientation.Vertical,
-                    };
-                    Image playsImage = new Image
-                    {
-                        Width = 20,
-                        Height = 20,
-                        Margin = new Thickness(0, 20, 0, 0),
-                        Source = playsImg,
-                        Opacity = 0.0,
-                    };
-                    RenderOptions.SetBitmapScalingMode(playsImage, BitmapScalingMode.HighQuality);
-
-                    Label playsLabel = new Label
-                    {
-                        Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9F9F9F")),
-                        HorizontalContentAlignment = HorizontalAlignment.Center,
-                        FontSize = 12.0,
-                        Content = song["plays"].ToString(),
-                        Opacity = 0.0,
-                    };
-
-                    playPanel.Children.Add(playsImage);
-                    playPanel.Children.Add(playsLabel);
-
-                    thumbnailBorder.Child = playPanel;
-
-                    songPanel.AddHandler(WrapPanel.MouseEnterEvent, new RoutedEventHandler(songPanel_Hover));
-                    songPanel.AddHandler(WrapPanel.MouseLeaveEvent, new RoutedEventHandler(songPanel_UnHover));
-                    songPanel.AddHandler(WrapPanel.MouseDownEvent, new RoutedEventHandler(playSong_Click));
-
-                    songPanel.Children.Add(thumbnailBorder);
-                    songPanel.Children.Add(songName);
-                    songPanel.Children.Add(artistTitle);
-
-                    songsList.Children.Add(songPanel);
+                    songsList.Children.Clear();
+                    songsList.Children.Add(nothingFoundText);
                 }
+                
             } catch
             {
 
@@ -428,21 +444,19 @@ namespace Noise.MainPages
 
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Back)
+            if (e.Key == Key.Enter)
             {
-                if (String.IsNullOrEmpty(searchBox.Text))
+                if (searchBox.Text.Length != 0)
+                {
+                    songsList.Children.Clear();
+                    loadSearchResults(searchBox.Text);
+                }
+                else
                 {
                     songsList.Children.Clear();
                     fetchAllSongs();
                 }
             }
-
-            if (!String.IsNullOrEmpty(searchBox.Text))
-            {
-                songsList.Children.Clear();
-                loadSearchResults(searchBox.Text);
-            }
-            
         }
     }
 }

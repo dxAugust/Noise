@@ -67,8 +67,6 @@ namespace Noise.MainPages
         {
             ServerResponse serverResponse = await ServerAPI.fetchSongByArtistUID(Config.userInfo.id);
 
-            Console.WriteLine(serverResponse.statusCode);
-
             try
             {
                 if (serverResponse.statusCode == 200)
@@ -103,8 +101,9 @@ namespace Noise.MainPages
                     SongsList.ItemsSource = songList.OrderBy(song => song.publicationDate).ToList();
                 } 
                 
-                if (serverResponse.statusCode == 506) { 
-                    NavigationService.Navigate(new CreateArtist());
+                if (serverResponse.statusCode == 506) {
+                    CreateArtist createArtistPage = new CreateArtist();
+                    NavigationService.Navigate(createArtistPage);
                 }
             } catch (Exception e) {
 
@@ -120,13 +119,19 @@ namespace Noise.MainPages
         public event EventHandler pageChange;
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
-            pageChange(sender, e);
+            if (!(sender is null))
+            {
+                pageChange(sender, e);
+            }
             NavigationService.Navigate(new SongUpload(null));
         }
 
         private void EditArtist_Click(object sender, RoutedEventArgs e)
         {
-            pageChange(sender, e);
+            if (!(sender is null))
+            {
+                pageChange(sender, e);
+            }
             editArtist();
         }
 
@@ -158,7 +163,10 @@ namespace Noise.MainPages
                 foreach (var song in SongsList.SelectedItems)
                 {
                     songItem songItem = song as songItem;
-                    pageChange(sender, e);
+                    if (!(sender is null))
+                    {
+                        pageChange(sender, e);
+                    }
                     openEditTab(songItem);
                 }
             }

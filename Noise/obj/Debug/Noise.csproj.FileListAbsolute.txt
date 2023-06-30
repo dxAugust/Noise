@@ -249,3 +249,10 @@ J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\CreateArtist.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\EditArtist.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\SongUpload.baml
 J:\Files\GitHub\Noise\Noise\obj\Debug\Noise.csproj.AssemblyReference.cache
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Playlists.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\Playlists.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Styles\MenuItems.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\EditPlaylist.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\PlaylistSongs.g.cs
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\EditPlaylist.baml
+J:\Files\GitHub\Noise\Noise\obj\Debug\Pages\PlaylistSongs.baml

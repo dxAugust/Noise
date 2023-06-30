@@ -159,7 +159,8 @@ namespace Noise.Pages
             ServerResponse serverResponse = await ServerAPI.deleteSong(songId);
             if (serverResponse.statusCode == 200)
             {
-                NavigationService.Navigate(new Studio());
+                Studio studioPage = new Studio();
+                NavigationService.Navigate(studioPage);
             }
             else if (serverResponse.statusCode == 503)
             {

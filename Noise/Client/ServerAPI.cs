@@ -325,5 +325,68 @@ namespace Noise.Client
 
             return serverResponse;
         }
+
+
+        public static async Task<ServerResponse> getPlaylists(int authorid)
+        {
+            var response = await client.GetAsync(Config.apiURL + "playlist/fetch/" + authorid);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
+        public static async Task<ServerResponse> getPlaylistById(int playlistId)
+        {
+            var response = await client.GetAsync(Config.apiURL + "playlist/info/" + playlistId);
+            var responseString = await response.Content.ReadAsStringAsync();
+
+            ServerResponse serverResponse = new ServerResponse()
+            {
+                statusCode = (int)response.StatusCode,
+                response = responseString,
+            };
+
+            return serverResponse;
+        }
+
+        public static async Task<ServerResponse> editPlaylist(Playlist playlist)
+        {
+            using (var multipartFormContent = new MultipartFormDataContent())
+            {
+                multipartFormContent.Add(new StringContent(Config.userInfo.session_token), name: "session_token");
+                multipartFormContent.Add(new StringContent("" + playlist.id), name: "playlistId");
+                multipartFormContent.Add(new StringContent("" + playlist.name), name: "name");
+                multipartFormContent.Add(new StringContent("" + playlist.description), name: "description");
+
+                if (playlist.songs_id.Length != 0)
+                {
+                    
+                }
+
+                if (playlist.playlistThumb.Length != 0)
+                {
+                    var thumbStreamContent = new StreamContent(File.OpenRead(playlist.playlistThumb));
+                    thumbStreamContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                    multipartFormContent.Add(thumbStreamContent, name: "thumbnail", fileName: "thumbnail.png");
+                }
+
+                var response = await client.PostAsync(Config.apiURL + "playlist/edit/" + playlist.id, multipartFormContent);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                ServerResponse serverResponse = new ServerResponse()
+                {
+                    statusCode = (int)response.StatusCode,
+                    response = responseString,
+                };
+
+                return serverResponse;
+            }
+        }
     }
 }

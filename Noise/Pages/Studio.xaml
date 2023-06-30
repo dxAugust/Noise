@@ -34,7 +34,7 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        
+
         <StackPanel Grid.Row="0" Grid.Column="1">
             <Button Margin="5" Padding="10"
                 Style="{DynamicResource menuItem}"
@@ -51,7 +51,6 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-
 
         <DataGrid x:Name="SongsList" 
                   Style="{DynamicResource songsGrid}"
@@ -80,6 +79,25 @@
                 <DataGridTextColumn Header="{DynamicResource nameCollumn}" Binding="{Binding Path=name}"/>
                 <DataGridTextColumn Header="{DynamicResource playsCollumn}" Binding="{Binding Path=plays}"/>
                 <DataGridTextColumn Header="{DynamicResource pubCollumn}" Binding="{Binding Path=publicationDate}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel
+                                Orientation="Horizontal">
+                                <Button Margin="5" Padding="10"
+                                Style="{DynamicResource transparentButton}"
+                                Foreground="White"
+                                Click="Upload_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image RenderOptions.BitmapScalingMode="HighQuality" Width="28" Height="28" 
+                                        Source="/Assets/icon-edit.png"
+                                        Margin="0 0 10 0"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

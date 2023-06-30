@@ -25,6 +25,7 @@ namespace Noise.Pages
     public partial class EditArtist : Page
     {
         Artist editInfo = new Artist();
+        public string bannerUri;
         public EditArtist(Artist artistInfo)
         {
             InitializeComponent();
@@ -56,17 +57,46 @@ namespace Noise.Pages
                 editInfo = artistInfo;
                 usernameBox.Text = artistInfo.username;
                 descriptionBox.Text = artistInfo.description;
+
+                Image bannerPreview = new Image();
+                bannerPreview.Width = 300;
+                bannerPreview.Height = 128;
+
+                if (artistInfo.banner.Length != 0)
+                {
+                    Uri bannerSrc = new Uri(Config.serverURL + "/banner/" + artistInfo.id + ".png");
+                    bannerPreview.Source = new BitmapImage(bannerSrc);
+                    thumbDropArea.Child = bannerPreview;
+                }
             }
         }
         private async void editArtist(Artist artistInfo)
         {
-            ServerResponse serverResponse = await ServerAPI.setArtistInfo(artistInfo, "");
+            ServerResponse serverResponse = await ServerAPI.setArtistInfo(artistInfo, bannerUri);
             if (serverResponse.statusCode == 200)
             {
                 NavigationService.Navigate(new Studio());
             } else if (serverResponse.statusCode == 504)
             {
                 errorText.Content = (string)Application.Current.Resources["errorOccupiedNick"];
+            }
+        }
+
+        private void UploadBanner(object sender, MouseButtonEventArgs e)
+        {
+            Image thumbnailPreview = new Image();
+            thumbnailPreview.Width = 128;
+            thumbnailPreview.Height = 128;
+
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.DefaultExt = ".png";
+            dlg.Filter = "Image Files|*.png;*.jpeg;*.gif|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+            if (dlg.ShowDialog() == true)
+            {
+                thumbnailPreview.Source = new BitmapImage(new Uri(dlg.FileName));
+                bannerUri = dlg.FileName;
+                thumbDropArea.Child = thumbnailPreview;
             }
         }
 

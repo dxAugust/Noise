@@ -12,7 +12,7 @@ namespace Noise.Client
         public int user_id { get; set; }
         public int[] songs_id { get; set; }
         public string name { get; set; }
-        public int length { get; set; }
-        public string thumbnail_path { get; set; }
+        public string description { get; set; }
+        public string playlistThumb { get; set; }
     }
 }

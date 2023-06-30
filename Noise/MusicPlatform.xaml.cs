@@ -6,9 +6,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Noise.Client;
 using Noise.MainPages;
+using Noise.Pages;
 using Noise.Pages.StudioPages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Linq.Expressions;
@@ -51,6 +53,12 @@ namespace Noise
 
         public bool changingPosition = false;
 
+        public class data
+        {
+            public string session_token { get; set; }
+            public int volume { get; set; }
+        }
+
         public static double time = 2;
         DoubleAnimation opacity = new DoubleAnimation
         {
@@ -92,11 +100,19 @@ namespace Noise
             EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
         };
 
+        ThicknessAnimation menuAnimation = new ThicknessAnimation
+        {
+            From = new Thickness(30, 0, 0, 0),
+            To = new Thickness(0, 0, 0, 0),
+            Duration = new Duration(TimeSpan.FromSeconds(time)),
+            EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
+        };
+
         public enum Pages : int
         {
             home = 0,
             studio = 1,
-            playlists = 1,
+            playlists = 2,
 
             other = 3,
         }
@@ -116,7 +132,38 @@ namespace Noise
             mainScreen.Navigate(discoverSongsPage);
             discoverSongsPage.playingNewSong += new EventHandler(playSongByIdAsync);
 
-            profileName.Content = Config.userInfo.login;
+            DockPanel dockPanel = new DockPanel();
+            Border borderPanel = new Border()
+            {
+                Width = 32,
+                Height = 32,
+                CornerRadius = new CornerRadius(15)
+            };
+
+            Uri avatarURI = new Uri("./Assets/avatar.png", UriKind.Relative);
+            BitmapImage avatar = new BitmapImage(avatarURI);
+
+            ImageBrush avatarImage = new ImageBrush()
+            {
+                Stretch = Stretch.Fill,
+                ImageSource = avatar,
+            };
+
+            TextBlock nicknameBlock = new TextBlock()
+            {
+                FontSize = 16.0,
+                Foreground = Brushes.White,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+
+            nicknameBlock.Text = Config.userInfo.login;
+
+            RenderOptions.SetBitmapScalingMode(avatarImage, BitmapScalingMode.HighQuality);
+            borderPanel.Background = avatarImage;
+
+            dockPanel.Children.Add(borderPanel);
+            dockPanel.Children.Add(nicknameBlock);
+            profileName.Header = dockPanel;
 
             profilePanel.BeginAnimation(UIElement.OpacityProperty, opacity);
             Timeline.SetDesiredFrameRate(posY, 140);
@@ -126,6 +173,18 @@ namespace Noise
             profilePanel.BeginAnimation(Grid.MarginProperty, posY);
             categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
             categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
+
+            programMenu.BeginAnimation(StackPanel.OpacityProperty, opacity);
+            programMenu.BeginAnimation(StackPanel.MarginProperty, menuAnimation);
+
+            string Path = Environment.CurrentDirectory + "/user.json";
+            if (File.Exists(@Path))
+            {
+                string jsonObject = File.ReadAllText(@Path);
+                data userData = JsonConvert.DeserializeObject<data>(jsonObject);
+
+                volumeSlider.Value = userData.volume;
+            }
         }
 
         private async void playSongByIdAsync(object sender, EventArgs e)
@@ -282,7 +341,10 @@ namespace Noise
         private void volumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             currentVolume.Content = (int)volumeSlider.Value + "%";
-            musicPlayer.Volume = (float)((volumeSlider.Value / 10) / 10);
+            if (!(musicPlayer is null))
+            {
+                musicPlayer.Volume = (float)((volumeSlider.Value / 10) / 10);
+            }
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
@@ -360,7 +422,7 @@ namespace Noise
 
                 categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
                 categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
-                categoryTitleText.Content = (string)Application.Current.Resources["studioCategory"];
+                categoryTitleText.Content = (string)Application.Current.Resources["menuItem2"];
             }
         }
 
@@ -370,12 +432,12 @@ namespace Noise
             {
                 currentPage = Pages.playlists;
 
-                Studio studioPage = new Studio();
-                mainScreen.Navigate(studioPage);
+                Playlists playlistsPage = new Playlists();
+                mainScreen.Navigate(playlistsPage);
 
                 categoryTitle.BeginAnimation(StackPanel.MarginProperty, posX);
                 categoryTitle.BeginAnimation(StackPanel.OpacityProperty, opacity);
-                categoryTitleText.Content = (string)Application.Current.Resources["studioCategory"];
+                categoryTitleText.Content = (string)Application.Current.Resources["menuItem3"];
             }
         }
 
@@ -399,6 +461,58 @@ namespace Noise
         private void artistName_Click(object sender, MouseButtonEventArgs e)
         {
             storeArtistInfo((string)currentPlayingArtistName.Content);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            data userData = new data
+            {
+                session_token = Config.userInfo.session_token,
+                volume = (int)volumeSlider.Value,
+            };
+
+            string Path = Environment.CurrentDirectory + "/user.json";
+            File.WriteAllText(@Path, JsonConvert.SerializeObject(userData));
+            using (StreamWriter file = File.CreateText(@Path))
+            {
+                Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
+                serializer.Serialize(file, userData);
+            }
+        }
+
+        private void profileName_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            string Path = Environment.CurrentDirectory + "/user.json";
+            if (File.Exists(@Path))
+            {
+                File.Delete(Path);
+
+                try
+                {
+                    string filename = @Path;
+                    if (File.Exists(filename))
+                    {
+                        File.Delete(filename);
+                    }
+                    else
+                    {
+                        
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                }
+            }
+
+            var loginForm = new MainWindow();
+
+            var location = this.PointToScreen(new Point(0, 0));
+            loginForm.Left = location.X;
+            loginForm.Top = location.Y;
+
+            loginForm.Show();
+            this.Close();
         }
     }
 }

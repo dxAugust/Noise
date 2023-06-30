@@ -7,8 +7,75 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Playlists">
+    <Grid
+        x:Name="mainContent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
 
-    <Grid>
-        
+        <Button Padding="10"
+                Style="{DynamicResource menuItem}"
+                Foreground="White"
+                Click="AddPlaylist_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image RenderOptions.BitmapScalingMode="HighQuality" Width="32" Height="32" 
+                       Source="/Assets/icon-plus.png"
+                       Margin="0 0 10 0"/>
+                <Label Content="{DynamicResource addPlaylistButton}" 
+                       FontSize="16px"
+                       TextOptions.TextRenderingMode="ClearType"
+                       Foreground="White"></Label>
+            </StackPanel>
+        </Button>
+
+        <DataGrid x:Name="playlistList" 
+                  Style="{DynamicResource songsGrid}"
+                  ColumnHeaderStyle="{DynamicResource songListCollumnHeader}"
+                  RowStyle="{DynamicResource songListRows}"
+                  CellStyle="{DynamicResource songListCells}" 
+                  SelectionChanged="playlistList_SelectionChanged"
+                  Margin="0,10,0,0" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{DynamicResource imageCollumn}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Width="100" 
+                            Height="100" 
+                            CornerRadius="15">
+                                <Border.Background>
+                                    <ImageBrush 
+                                    RenderOptions.BitmapScalingMode="HighQuality"
+                                    Stretch="Fill" 
+                                    ImageSource="{Binding Path=image}"/>
+                                </Border.Background>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{DynamicResource nameCollumn}" Binding="{Binding Path=id}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="{DynamicResource nameCollumn}" Binding="{Binding Path=name}"/>
+                <DataGridTextColumn Header="{DynamicResource songsAmountColumn}" Binding="{Binding Path=songsAmount}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel
+                                Orientation="Horizontal">
+                                <Button Margin="5" Padding="10"
+                                Style="{DynamicResource transparentButton}"
+                                Foreground="White"
+                                Click="editButton_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image RenderOptions.BitmapScalingMode="HighQuality" Width="28" Height="28" 
+                                        Source="/Assets/icon-edit.png"
+                                        Margin="0 0 10 0"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

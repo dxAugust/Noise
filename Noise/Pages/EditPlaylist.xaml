@@ -1,4 +1,4 @@
-﻿<Page x:Class="Noise.Pages.EditArtist"
+﻿<Page x:Class="Noise.Pages.EditPlaylist"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:Noise.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="800"
-      Title="EditArtist">
+      Title="EditPlaylist">
 
     <Grid
-        x:Name="artistPanel">
+        x:Name="mainContent">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
@@ -19,21 +19,21 @@
         <StackPanel Grid.Column="1">
             <DockPanel>
                 <Label
-                        VerticalAlignment="Center"
-                        FontFamily="Segoe UI" 
-                        FontSize="16" 
-                        Foreground="{DynamicResource PrimaryTextColor}" 
-                        FontWeight="Bold"
-                        Content="{DynamicResource artistNamePlaceholder}"/>
+                    VerticalAlignment="Center"
+                    FontFamily="Segoe UI" 
+                    FontSize="16" 
+                    Foreground="{DynamicResource PrimaryTextColor}" 
+                    FontWeight="Bold"
+                    Content="{DynamicResource artistNamePlaceholder}"/>
                 <Border CornerRadius="5" BorderThickness="1" BorderBrush="#212121" Margin="10">
                     <DockPanel  
-                            Background="Transparent">
+                                    Background="Transparent">
                         <TextBox Background="#212121" 
                                  Foreground="White" 
                                  Height="40" 
                                  VerticalContentAlignment="Center" 
                                  BorderThickness="0" 
-                                 x:Name="usernameBox"
+                                 x:Name="namePlaylist"
                                  FontSize="16"/>
                     </DockPanel>
                 </Border>
@@ -67,7 +67,7 @@
                 <Border
                     BorderBrush="{DynamicResource MainTextColor}"
                     BorderThickness="1"
-                    PreviewMouseLeftButtonDown="UploadBanner"
+                    PreviewMouseLeftButtonDown="UploadThumb"
                     Padding="30"
                     Margin="20"
                     x:Name="thumbDropArea">
@@ -83,12 +83,12 @@
                             Foreground="{DynamicResource MainTextColor}">
                             <TextBlock TextWrapping="WrapWithOverflow"
                                        TextAlignment="Center"
-                                       Text="{DynamicResource bannerUpload}"/>
+                                       Text="{DynamicResource thumbnailUpload}"/>
                         </Label>
                     </WrapPanel>
                 </Border>
             </DockPanel>
-            
+
             <DockPanel>
                 <Label
                     VerticalAlignment="Center"
@@ -99,14 +99,14 @@
                     x:Name="errorText">
                 </Label>
             </DockPanel>
-            
+
             <Grid>
                 <Button
                     Padding="10"
-                    Content="{DynamicResource editArtistCard}"
+                    Content="{DynamicResource createPlaylistButton}"
                     Style="{DynamicResource roundButton}"
-                    x:Name="artistButton"
-                    Click="artistButton_Click">
+                    x:Name="playlistCreateButton"
+                    Click="playlistCreateButton_Click">
                 </Button>
             </Grid>
         </StackPanel>
